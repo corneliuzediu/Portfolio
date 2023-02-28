@@ -30,7 +30,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/fonts/font-ballo2.scss",
+              "src/assets/fonts/font-montserrat.scss"
             ],
             "scripts": []
           },
@@ -100,5 +102,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "0f2c75db-3851-409c-b86a-eb08731ac105"
   }
 }

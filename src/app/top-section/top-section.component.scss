@@ -1,0 +1,141 @@
+$base-color: #57E8A2;
+$bg-gradient: radial-gradient(74.22% 74.22% at 19.79% 22.42%, $base-color 51.56%, #33B476 100%);
+$main-font-family : 'Monserrat';
+$second-font-family : 'Baloo 2';
+$width-title: 550px;
+
+
+.top-section__wrapper {
+    position: relative;
+    width: inherit;
+    height: 100svh;
+    background: linear-gradient(179.99deg, #FFFFFF 12.89%, #D7FFEC 91.39%)
+}
+
+.header {
+    position: absolute;
+    font-size: 23px;
+    top: 0px;
+    width: 100%;
+    margin-right: 98.5px;
+}
+
+.top-section__main-img {}
+
+.top-section__bg-circle {
+    position: absolute;
+    top: -80px;
+    left: -199px;
+    width: 892px;
+    height: 892px;
+    border-radius: 100%;
+    background: $bg-gradient;
+}
+
+
+
+.top-section__title-wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 232px;
+    width: 100%;
+    height: -webkit-fill-available;
+}
+
+
+.top-section__title {
+    position: absolute;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    width: 645px;
+
+    h1 {
+        color: $base-color;
+        font-size: 48px;
+        margin: unset;
+        font-weight: 200;
+        width: $width-title;
+    }
+
+    h2 {
+        margin: unset;
+        color: $base-color;
+        font-size: 98px;
+        font-family: $second-font-family;
+        width: $width-title;
+
+    }
+
+    h3 {
+        margin: unset;
+        color: $base-color;
+        font-size: 88px;
+        font-family: $second-font-family;
+        width: $width-title;
+
+    }
+}
+
+.top-section__scroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: $width-title;
+    transform: translateY(130px);
+    height: auto;
+    flex-grow: 1;
+
+
+    span {
+        color: $base-color;
+        font-size: 23px;
+    }
+
+    div {
+        margin-top: 10px;
+        border: 2px solid $base-color;
+        height: auto;
+        display: flex;
+        flex-grow: 1;
+        overflow: hidden;
+        height: 50svh;
+    }
+}
+
+
+.top-section_logo-platforms {
+    position: absolute;
+    bottom: 69px;
+    right: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+
+    img {
+        width: 30px;
+        height: 30px;
+    }
+
+    a {
+        transition: transform 150ms ease-in-out;
+
+        &:hover {
+            transform: translateX(-10px);
+        }
+    }
+}
+
+
+.intermediary-circle {
+    position: absolute;
+    z-index: 5;
+    top: 100svh;
+    left: 50%;
+    width: 206px;
+    height: 206px;
+    border-radius: 100%;
+    background: $bg-gradient;
+    transform: translate(-50%, -50%);
+}

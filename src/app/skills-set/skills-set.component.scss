@@ -1,0 +1,49 @@
+$base-color: #57E8A2;
+$bg-gradient: radial-gradient(74.22% 74.22% at 19.79% 22.42%, $base-color 51.56%, #33B476 100%);
+$main-font-family : 'Monserrat';
+$second-font-family : 'Baloo 2';
+
+.skills-set_wrapper {
+    height: 632px;
+    width: 100%;
+    background: linear-gradient(128.95deg, #57E8A2 32.52%, #33B476 104.12%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.skills-set_title{
+    color: white;
+    font-family: $second-font-family;
+    font-size: 96px;
+    font-weight: 700;
+    margin-bottom: 63px;
+}
+
+
+.skills-set_board{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 140px;
+    row-gap: 90px;
+    width: 1000px;
+    color: white;
+    font-size: 16px;
+}
+
+
+.skill{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:hover{
+        transform: scale(1.1);
+
+        p{
+            font-size: 18px;
+        }
+    }
+}
