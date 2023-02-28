@@ -1,5 +1,147 @@
+$base-color: #57E8A2;
+$bg-gradient: radial-gradient(74.22% 74.22% at 19.79% 22.42%, $base-color 51.56%, #33B476 100%);
+$main-font-family : 'Monserrat';
+$second-font-family : 'Baloo 2';
 
-
-.projects-board_wrapper{
+.projects-board_wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     width: 100%;
+}
+
+
+.projects-board_title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-inline: 100px;
+    margin-bottom: 25px;
+
+    h2 {
+        color: $base-color;
+        font-family: $second-font-family;
+        font-size: 96px;
+        width: 50%;
+        margin-bottom: unset;
+    }
+
+    p {
+        font-size: 23px;
+    }
+}
+
+
+.projects-board_circle-1 {
+    position: absolute;
+    background: $bg-gradient;
+    width: 110px;
+    height: 110px;
+    border-radius: 100%;
+    left: 563px;
+    top: 50px;
+}
+
+
+.projects-board_circle-2 {
+    position: absolute;
+    right: 163px;
+    top: 200px;
+    width: 183px;
+    height: 183px;
+    border-radius: 100%;
+    background: $bg-gradient;
+}
+
+.project_wrapper {
+    display: flex;
+    justify-content: center;
+    min-height: 400px;
+    max-width: 100vw;
+    margin-inline: 100px;
+    margin-block: 50px;
+}
+
+
+.project-img-holder-left {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+
+    img {
+        height: 393px;
+        width: 620px;
+        box-shadow: 2px 5px 5px 5px rgba(0, 0, 0, 0.1);
+    }
+}
+
+
+.project-img-holder-right {
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+
+    img {
+        height: 393px;
+        width: 620px;
+        box-shadow: 2px 5px 5px 5px rgba(0, 0, 0, 0.1);
+    }
+}
+
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left: 80px;
+    align-items: flex-start;
+    width: 50%;
+
+    h2 {
+        font-size: 45px;
+        font-family: $second-font-family;
+        color: $base-color;
+        margin: unset;
+    }
+
+    h3 {
+        font-size: 23px;
+        color: $base-color;
+        margin: unset;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+
+.project-info-left {
+    align-items: flex-end;
+    padding-right: 80px;
+    padding-left: unset;
+    width: 50%;
+}
+
+
+
+.project-buttons {
+    display: flex;
+    gap: 20px;
+
+    button {
+        margin-top: 13px;
+        background: unset;
+        border: 2px solid $base-color;
+        border-radius: 10px;
+        padding: 15px 30px;
+        color: $base-color;
+        cursor: pointer;
+
+        &:hover {
+            transform: scaleX(1.1);
+            background: $bg-gradient;
+            color: white;
+        }
+    }
 }

@@ -16,12 +16,12 @@ $second-font-family : 'Baloo 2';
 
 .about-me_left {
     display: flex;
-    text-align: center;
     font-size: 121px;
     font-family: $second-font-family;
     color: $base-color;
     font-weight: 800;
     width: 50%;
+    margin-left: 100px;
 }
 
 
@@ -32,6 +32,7 @@ $second-font-family : 'Baloo 2';
     align-items: center;
     width: 50%;
     margin-right: 96px;
+    font-size: 23px;
 
 
     button {
@@ -40,12 +41,11 @@ $second-font-family : 'Baloo 2';
         border: 2px solid $base-color;
         border-radius: 10px;
         padding: 15px 30px;
-        font-size: 23px;
         // font-family: $main-font-family;
         color: $base-color;
 
         &:hover {
-            transform: translate(-50%) scaleX(1.1);
+            transform: scaleX(1.1);
             background: $bg-gradient;
             color: white;
             // animation: sendMessage;
