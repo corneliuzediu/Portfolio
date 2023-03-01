@@ -2,13 +2,14 @@ $base-color: #57E8A2;
 $bg-gradient: radial-gradient(74.22% 74.22% at 19.79% 22.42%, $base-color 51.56%, #33B476 100%);
 $main-font-family : 'Monserrat';
 $second-font-family : 'Baloo 2';
-$width-title: 550px;
+$width-title: auto;
 
 
 .top-section__wrapper {
     position: relative;
     width: inherit;
     height: 100svh;
+    min-height: 1000px;
     background: linear-gradient(179.99deg, #FFFFFF 12.89%, #D7FFEC 91.39%)
 }
 
@@ -46,25 +47,26 @@ $width-title: 550px;
 
 .top-section__title {
     position: absolute;
-    left: 50%;
+    left: 55%;
     display: flex;
     flex-direction: column;
-    width: 645px;
+    height: 100%;
 
     h1 {
         color: $base-color;
         font-size: 48px;
         margin: unset;
         font-weight: 200;
-        width: $width-title;
+
     }
 
     h2 {
         margin: unset;
+        padding-top: 10px;
         color: $base-color;
         font-size: 98px;
         font-family: $second-font-family;
-        width: $width-title;
+        line-height: 100%;
 
     }
 
@@ -73,8 +75,7 @@ $width-title: 550px;
         color: $base-color;
         font-size: 88px;
         font-family: $second-font-family;
-        width: $width-title;
-
+        line-height: 100%;
     }
 }
 
@@ -84,7 +85,6 @@ $width-title: 550px;
     align-items: center;
     width: $width-title;
     transform: translateY(130px);
-    height: auto;
     flex-grow: 1;
 
 
@@ -98,9 +98,8 @@ $width-title: 550px;
         border: 2px solid $base-color;
         height: auto;
         display: flex;
-        flex-grow: 1;
         overflow: hidden;
-        height: 50svh;
+        min-height: calc(100% - 172px);
     }
 }
 
@@ -131,11 +130,24 @@ $width-title: 550px;
 .intermediary-circle {
     position: absolute;
     z-index: 5;
-    top: 100svh;
+    bottom: 0px;
     left: 50%;
     width: 206px;
     height: 206px;
     border-radius: 100%;
     background: $bg-gradient;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 50%);
+}
+
+
+
+
+
+
+
+@media(max-width:1500px) {
+    .top-section__title {
+        left: 60%;
+    }
+
 }

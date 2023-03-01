@@ -4,4 +4,9 @@ body,
 html {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+button {
+    cursor: pointer;
 }

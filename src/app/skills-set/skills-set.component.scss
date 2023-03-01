@@ -14,7 +14,7 @@ $second-font-family : 'Baloo 2';
 }
 
 
-.skills-set_title{
+.skills-set_title {
     color: white;
     font-family: $second-font-family;
     font-size: 96px;
@@ -23,26 +23,40 @@ $second-font-family : 'Baloo 2';
 }
 
 
-.skills-set_board{
+.skills-set_board {
     display: flex;
     flex-wrap: wrap;
+    align-self: center;
     gap: 140px;
     row-gap: 50px;
-    width: 1000px;
+    width: 1060px;
     color: white;
     font-size: 16px;
 }
 
 
-.skill{
+.skill {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 140px;
+    transition: all 150ms ease-in-out;
 
-    &:hover{
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        text-align: center;
+    }
+
+    &:hover {
         transform: scale(1.1);
 
-        p{
+        p {
             font-size: 18px;
         }
     }

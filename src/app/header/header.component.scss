@@ -9,6 +9,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     ul {
         display: flex;
         justify-content: space-between;
@@ -17,11 +18,20 @@ header {
         margin-top: 47.5px;
         padding-right: 98.5px;
 
-        a {
-            text-decoration: none;
-            color: $base-color;
-            font-size: $font-size-medium;
-            font-weight: 400;
+        div {
+            width: 120px;
+
+            a {
+                text-decoration: none;
+                color: $base-color;
+                font-size: $font-size-medium;
+                font-weight: 400;
+                transition: all 150ms ease-in-out;
+
+                &:hover {
+                    font-weight: 600;
+                }
+            }
         }
     }
 }
@@ -34,4 +44,10 @@ header {
     width: 64px;
     height: 69px;
     background-color: aqua;
+}
+
+.to-the-top_wrapper{
+    position: sticky;
+    left: 100px;
+    top: 200svh;
 }
