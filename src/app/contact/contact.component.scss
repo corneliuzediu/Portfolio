@@ -4,10 +4,142 @@ $main-font-family : 'Monserrat';
 $second-font-family : 'Baloo 2';
 
 .contact_wrapper {
-    min-height: 200px;
+    position: relative;
+    display: flex;
+    margin-top: 100px;
     background: linear-gradient(179.99deg, #FFFFFF 12.89%, #D7FFEC 91.39%);
+    padding-bottom: 150px;
+}
 
-    div{
-        margin-inline: 100px;
+.contact_left {
+    // width: 50%;
+    margin-left: 100px;
+    padding-right: 150px;
+
+
+    h1 {
+        color: $base-color;
+        font-family: $second-font-family;
+        font-size: 90px;
+        font-weight: 800;
+        margin: unset;
+        line-height: 0%;
+        transform: translateY(-100px);
+    }
+
+    h2 {
+        color: $base-color;
+        font-size: 32px;
+        margin-top: unset;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    h4 {
+        color: $base-color;
+        font-weight: 400;
+    }
+}
+
+
+.contact_right {
+    align-self: flex-start;
+    min-width: calc(50% - 100px);
+    margin-right: 100px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+
+        input,
+        textarea {
+            padding: 15px 25px;
+            border: 1px solid $base-color;
+            border-radius: 10px;
+            background: white;
+            outline: none;
+            width: 100%;
+
+            &::placeholder {
+                font-size: 19px;
+                font-weight: 500;
+            }
+
+
+            &:focus,
+            &:hover {
+                box-shadow: inset 0px 0px 1px 1px $base-color;
+            }
+        }
+
+
+        textarea {
+            min-height: 200px;
+            font-size: 19px;
+
+            &::-webkit-resizer {
+                background: url('../../assets/icons/resizer.png');
+                padding: 50px;
+                color: $base-color;
+                background-repeat: no-repeat;
+                background-position-x: -1px;
+                background-position-y: -1px;
+            }
+        }
+
+
+        button {
+            width: min-content;
+            white-space: nowrap;
+            padding: 15px 25px;
+            font-size: 24px;
+            color: $base-color;
+            background-color: transparent;
+            border-radius: 10px;
+            border: 1px solid $base-color;
+            transition: all 250ms ease-in-out;
+            transform-origin: top;
+
+            &:focus,
+            &:hover {
+                color: white;
+                background: $bg-gradient;
+                scale: 1.1;
+            }
+        }
+
+    }
+}
+
+.to-the-top_wrapper {
+    position: absolute;
+    bottom: 50px;
+    left: 150px;
+
+    button {
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        border: none;
+        background: $bg-gradient;
+        transition: border 2500ms ease-in-out;
+
+        mat-icon {
+            color: white;
+        }
+
+        &:hover,
+        &:focus {
+            background: white;
+            border: 1px solid red;
+
+            mat-icon {
+                color: red;
+            }
+        }
     }
 }

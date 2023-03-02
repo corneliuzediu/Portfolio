@@ -2,6 +2,9 @@ import { ViewportScroller } from '@angular/common';
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+
+
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -29,7 +32,6 @@ export class ContactComponent implements OnInit {
 
 
     this.disableContactFields(nameContact, emailContact, messageContact, sentButton);
-    this.clearContactFields(nameContact, emailContact, messageContact, sentButton);
 
     //sending animation
 
@@ -48,7 +50,7 @@ export class ContactComponent implements OnInit {
 
 
     //Text succes
-
+    this.clearContactFields(nameContact, emailContact, messageContact, sentButton);
     this.enableContactFields(nameContact, emailContact, messageContact, sentButton)
 
   }

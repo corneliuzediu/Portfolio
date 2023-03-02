@@ -11,6 +11,10 @@ import { ProjectsBoardComponent } from './projects-board/projects-board.componen
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
@@ -20,13 +24,17 @@ import { ReactiveFormsModule } from '@angular/forms';
     AboutMeComponent,
     SkillsSetComponent,
     ProjectsBoardComponent,
-    ContactComponent
+    ContactComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
