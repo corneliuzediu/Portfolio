@@ -5,7 +5,15 @@
             projects with my work.</p>
         <h4> Need a Fronend developer? <b>Contact me</b></h4>
     </div>
-    <div class="contact_right"></div>
+    <div class="contact_right">
+        <form (submit)="sendMail()" #myForm ngNativeValidate>
+            <input type="text" placeholder="Your name" name="name" #nameContact required>
+            <input type="email" placeholder="Your email" name="email" #emailContact required>
+            <textarea type="text" placeholder="Your message" name="message" #messageContact required></textarea>
+            <button #sentButton>Send</button>
+        </form>
+
+    </div>
 </div>
 <div class="to-the-top_wrapper">
     <button (click)="goToTheTop()">Go to top</button>

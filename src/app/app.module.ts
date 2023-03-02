@@ -9,6 +9,8 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { SkillsSetComponent } from './skills-set/skills-set.component';
 import { ProjectsBoardComponent } from './projects-board/projects-board.component';
 import { ContactComponent } from './contact/contact.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ContactComponent } from './contact/contact.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
