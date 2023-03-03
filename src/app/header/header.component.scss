@@ -46,8 +46,32 @@ header {
     background-color: aqua;
 }
 
-.to-the-top_wrapper{
+.to-the-top_wrapper {
     position: sticky;
     left: 100px;
     top: 200svh;
+}
+
+
+@media(max-width:1300px) {
+    header {
+        ul {
+            gap: 30px;
+        }
+    }
+}
+
+
+@media(max-width:1200px) {
+    header {
+        ul {
+            padding-right: 50px;
+        }
+    }
+}
+
+@media(max-width:1000px){
+    .header-pc{
+        display: none;
+    }
 }

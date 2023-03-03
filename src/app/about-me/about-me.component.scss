@@ -1,6 +1,7 @@
 $base-color: #57E8A2;
 $bg-gradient: radial-gradient(74.22% 74.22% at 19.79% 22.42%, $base-color 51.56%, #33B476 100%);
-$main-font-family : 'Monserrat';
+$main-font-family : "Montserrat",
+sans-serif;
 $second-font-family : 'Baloo 2';
 
 .about-me_wrapper {
@@ -20,7 +21,7 @@ $second-font-family : 'Baloo 2';
     font-size: 121px;
     font-family: $second-font-family;
     color: $base-color;
-    font-weight: 800;
+    font-weight: 700;
     width: 50%;
     margin-left: 100px;
     line-height: 100%;
@@ -36,12 +37,13 @@ $second-font-family : 'Baloo 2';
     margin-right: 96px;
     font-size: 23px;
     padding-top: 100px;
+    line-height: 120%;
+    font-family: $main-font-family;
 
 }
 
 .about-me_button-container {
     height: 50px;
-    // width: 200px;
 
     button {
         position: relative;
@@ -51,7 +53,10 @@ $second-font-family : 'Baloo 2';
         border-radius: 10px;
         padding: 15px 30px;
         color: $base-color;
-        transition: all 150ms ease-in-out;
+        transition: all 350ms ease-in-out;
+        transform-origin: top left;
+        font-size: 19px;
+
 
         &::before {
             position: absolute;
@@ -63,8 +68,8 @@ $second-font-family : 'Baloo 2';
             background: $bg-gradient;
             z-index: -1;
 
-            transform: scaleX(0);
-            transform-origin: left;
+            transform: scale(0);
+            transform-origin: left top;
             transition: transform 300ms ease-in-out;
 
         }
@@ -73,14 +78,14 @@ $second-font-family : 'Baloo 2';
         &:focus {
             border: unset;
             outline: unset;
-            transform: scaleX(1.1);
+            transform: scale(1.1);
             color: white;
         }
 
         &:hover::before,
         &:focus::before {
             border-radius: 8px;
-            transform: scaleX(1);
+            transform: scale(1);
             // filter: brightness(1.4);
             // animation: sendMessage;
         }
@@ -90,7 +95,7 @@ $second-font-family : 'Baloo 2';
 
 .about-me_circle {
     position: absolute;
-    top: 82px;
+    top: 70px;
     left: 75%;
     width: 82px;
     height: 82px;
@@ -103,4 +108,53 @@ $second-font-family : 'Baloo 2';
     font-size: 23px;
     text-align: justify;
     padding-bottom: 40px;
+}
+
+
+@media(max-width:1100px){
+    .about-me_circle{
+        top:60px
+    }
+}
+
+@media(max-width:1200px) {
+    .about-me_left {
+        font-size: 88px;
+        // width: unset;
+    }
+
+    .about-me_right {
+        min-width: calc(50% - 100px);
+    }
+}
+
+
+@media(max-width:1000px){
+    .about-me_wrapper{
+        flex-direction: column;
+        gap:30px;
+        height: auto;
+        padding-top: 200px;
+        padding-bottom: 50px;
+    }
+
+
+    .about-me_left{
+        margin-left: unset;
+        width: unset;
+        padding-inline: 100px;
+    }
+
+    .about-me_right{
+        padding-top: unset;
+        padding-inline: 100px;
+        margin-right: unset;
+        min-width: calc(100% - 200px);
+    }
+
+
+    .about-me_circle{
+        top:90px;
+        left: 80%;
+    }
 }

@@ -1,6 +1,6 @@
 $base-color: #57E8A2;
 $bg-gradient: radial-gradient(74.22% 74.22% at 19.79% 22.42%, $base-color 51.56%, #33B476 100%);
-$main-font-family : 'Monserrat';
+$main-font-family : "Montserrat", sans-serif;
 $second-font-family : 'Baloo 2';
 
 .skills-set_wrapper {
@@ -15,6 +15,7 @@ $second-font-family : 'Baloo 2';
 
 
 .skills-set_title {
+    height: 80px;
     color: white;
     font-family: $second-font-family;
     font-size: 96px;
@@ -51,6 +52,7 @@ $second-font-family : 'Baloo 2';
         align-items: center;
         width: 100px;
         text-align: center;
+        gap: 10px
     }
 
     &:hover {
@@ -58,6 +60,22 @@ $second-font-family : 'Baloo 2';
 
         p {
             font-size: 18px;
+            // margin: unset !important;
         }
+    }
+}
+
+
+@media(max-width:1300px){
+.skills-set_wrapper{
+    height: auto;
+    padding-block: 100px;
+    
+}
+
+    .skills-set_board{
+        justify-content: center;
+        width: unset;
+        padding-inline: 100px;
     }
 }

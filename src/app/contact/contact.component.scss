@@ -11,8 +11,9 @@ $second-font-family : 'Baloo 2';
     padding-bottom: 150px;
 }
 
+
 .contact_left {
-    // width: 50%;
+    position: relative;
     margin-left: 100px;
     padding-right: 150px;
 
@@ -142,4 +143,96 @@ $second-font-family : 'Baloo 2';
             }
         }
     }
+}
+
+.contact-circle-1 {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, -150%) rotate(82deg);
+    width: 180px;
+    height: 180px;
+    background: $bg-gradient;
+    border-radius: 100%;
+}
+
+
+.contact-circle-2 {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-80%, -150%);
+    width: 210px;
+    height: 210px;
+    background: $bg-gradient;
+    border-radius: 100%;
+}
+
+
+.contact-circle-3 {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    transform: translate(-100%, -100%);
+    width: 80px;
+    height: 80px;
+    background: $bg-gradient;
+    border-radius: 100%;
+}
+
+
+@media(max-width:1300px) {
+
+    .contact_left {
+        padding-right: unset;
+        margin-right: 90px;
+    }
+
+    .contact_right {
+        form {
+            min-width: 50%;
+        }
+    }
+
+    .contact-circle-1 {
+        left: unset;
+        right: 0px;
+        top: 40px;
+    }
+
+
+    .contact-circle-2 {
+        top: 115%;
+    }
+}
+
+
+@media(max-width:1000px) {
+    .contact_wrapper {
+        flex-direction: column;
+    }
+
+
+    .contact_right {
+        min-width: unset;
+        margin-inline: 125px;
+        align-self: unset;
+
+        form {
+            padding-top: 20px;
+            width: 100%;
+
+            input,
+            textarea {
+                z-index: 3;
+            }
+        }
+    }
+
+
+    .contact-circle-2 {
+        top: 380%;
+        left: 35%;
+    }
+
 }

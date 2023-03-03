@@ -1,25 +1,47 @@
 $base-color: #57E8A2;
 $bg-gradient: radial-gradient(74.22% 74.22% at 19.79% 22.42%, $base-color 51.56%, #33B476 100%);
-$main-font-family : 'Monserrat';
+$main-font-family : "Montserrat",
+sans-serif;
 $second-font-family : 'Baloo 2';
 
 .footer_wrapper {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     height: 300px;
     background: $bg-gradient;
+}
+
+.footer_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 100px;
+
+}
+
+.footer_bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
 }
 
 
 .footer-logo {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    width: 64px;
-    height: 69px;
-    background-color: aqua;
-    margin-left: 100px;
+    width: 175px;
+
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 64px;
+        height: 69px;
+        background-color: aqua;
+    }
 }
 
 
@@ -31,6 +53,8 @@ $second-font-family : 'Baloo 2';
     font-family: $main-font-family;
     gap: 50px;
     transform: translateY(40px);
+    height: 50px;
+    white-space: nowrap;
 }
 
 
@@ -39,6 +63,12 @@ $second-font-family : 'Baloo 2';
     align-items: center;
     gap: 10px;
     font-size: 32px;
+}
+
+
+.footer_center {
+    gap: 20px;
+    margin-bottom: 50px;
 }
 
 
@@ -54,19 +84,65 @@ $second-font-family : 'Baloo 2';
         &:hover {
             text-shadow: 1px 1px white;
             border-bottom: 2px solid white;
-            
+
         }
     }
 }
 
 .footer_logo-platforms {
     display: flex;
+    justify-content: flex-end;
     gap: 42px;
-    margin-right: 100px;
+    width: 175px;
 
     a {
         &:hover {
             scale: 1.2;
         }
+    }
+}
+
+
+@media(max-width:1300px) {
+    .footer_logo-platforms {
+        flex-direction: column;
+        align-items: end;
+        gap: 30px
+    }
+
+
+    .footer_bottom {
+        transform: translateY(-50px);
+    }
+}
+
+@media(max-width:1000px) {
+    .footer_wrapper {
+        height: auto;
+        padding-block: 50px;
+        flex-direction: column;
+    }
+
+
+    .footer_top{
+        flex-direction: column;
+    }
+
+    .footer-logo {
+        width: unset;
+        margin: unset;
+    }
+
+    .footer_logo-platforms {
+        margin-right: unset;
+        flex-direction: row;
+        align-items: center;
+        width: unset;
+    }
+
+
+    .footer_bottom {
+        padding-top: 30px;
+        transform: unset;
     }
 }

@@ -11,7 +11,6 @@ export class TopSectionComponent {
   constructor(private scroller: ViewportScroller, private router: Router) { }
 
   goToContact() {
-    debugger;
     this.scroller.setOffset([0, 100])
     this.scroller.scrollToAnchor("contact");
   }
