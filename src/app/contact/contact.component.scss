@@ -1,7 +1,9 @@
-$base-color: #57E8A2;
+$base-color: rgb(87, 232, 162);
 $bg-gradient: radial-gradient(74.22% 74.22% at 19.79% 22.42%, $base-color 51.56%, #33B476 100%);
-$main-font-family : 'Monserrat';
+$main-font-family : "Montserrat",
+sans-serif;
 $second-font-family : 'Baloo 2';
+$width-title: auto;
 
 .contact_wrapper {
     position: relative;
@@ -18,30 +20,42 @@ $second-font-family : 'Baloo 2';
     padding-right: 150px;
 
 
-    h1 {
+    h2 {
         color: $base-color;
         font-family: $second-font-family;
         font-size: 90px;
         font-weight: 800;
         margin: unset;
-        line-height: 0%;
-        transform: translateY(-100px);
+        line-height: 100%;
+        margin-bottom: 50px;
     }
 
-    h2 {
+    h3 {
         color: $base-color;
         font-size: 32px;
         margin-top: unset;
     }
 
-    p {
-        font-size: 16px;
-    }
-
     h4 {
         color: $base-color;
         font-weight: 400;
+        font-size: 21px;
+        margin: unset;
     }
+
+
+    p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+}
+
+
+.contact_left-q2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    line-height: 100%;
 }
 
 
@@ -51,6 +65,7 @@ $second-font-family : 'Baloo 2';
     margin-right: 100px;
 
     form {
+        margin-top: 140px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -89,6 +104,11 @@ $second-font-family : 'Baloo 2';
                 background-repeat: no-repeat;
                 background-position-x: -1px;
                 background-position-y: -1px;
+            }
+
+            &::placeholder {
+                font-size: 21px;
+                font-weight: 500;
             }
         }
 
@@ -149,7 +169,7 @@ $second-font-family : 'Baloo 2';
     position: absolute;
     top: 0px;
     left: 50%;
-    transform: translate(-50%, -150%) rotate(82deg);
+    transform: translate(100%, -50%) rotate(82deg);
     width: 180px;
     height: 180px;
     background: $bg-gradient;
@@ -171,8 +191,8 @@ $second-font-family : 'Baloo 2';
 
 .contact-circle-3 {
     position: absolute;
-    bottom: 0px;
-    right: 0px;
+    bottom: -20px;
+    left: 90%;
     transform: translate(-100%, -100%);
     width: 80px;
     height: 80px;
@@ -184,19 +204,16 @@ $second-font-family : 'Baloo 2';
 @media(max-width:1300px) {
 
     .contact_left {
-        padding-right: unset;
-        margin-right: 90px;
+        padding-right: 90px;
     }
 
     .contact_right {
         form {
-            min-width: 50%;
+            width: 100%
         }
     }
 
     .contact-circle-1 {
-        left: unset;
-        right: 0px;
         top: 40px;
     }
 
@@ -210,6 +227,7 @@ $second-font-family : 'Baloo 2';
 @media(max-width:1000px) {
     .contact_wrapper {
         flex-direction: column;
+        // width: 100svw;
     }
 
 
@@ -219,20 +237,130 @@ $second-font-family : 'Baloo 2';
         align-self: unset;
 
         form {
-            padding-top: 20px;
+            margin-top: 70px;
             width: 100%;
 
             input,
             textarea {
                 z-index: 3;
+
             }
         }
     }
 
 
     .contact-circle-2 {
-        top: 380%;
-        left: 35%;
+        top: 350%;
+        left: 22%;
+    }
+}
+
+
+@media(max-width:800px) {
+    .contact_wrapper {
+        overflow: hidden;
+        margin-top: 70px;
+        padding-bottom: 70px;
     }
 
+    .contact_left,
+    .contact_right {
+        margin-inline: 50px;
+
+        form {
+            margin-top: 40px;
+
+            input,
+            textarea {
+                width: -webkit-fill-available;
+            }
+        }
+    }
+
+    .contact-circle-1 {
+        top: 90px;
+        right: -80px;
+    }
+
+    .contact-circle-2 {
+        top: 330%;
+    }
+}
+
+
+@media(max-width:600px) {
+    .contact_left {
+        padding-right: 0px;
+    }
+
+
+    .contact-circle-2 {
+        top: 800px;
+    }
+
+
+    .to-the-top_wrapper {
+        left: 50px;
+    }
+}
+
+
+@media(max-width:500px) {
+    .contact_left {
+        h2 {
+            font-size: 68px;
+            margin-bottom: 20px;
+        }
+
+
+    }
+}
+
+
+@media(max-width:450px) {
+    .contact_wrapper {
+        margin-top: 30px;
+    }
+
+    .contact_left {
+        margin-inline: 30px;
+
+        h2 {
+            font-size: 3rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+    }
+
+
+    .contact_right {
+        margin-inline: 30px;
+    }
+
+
+    .contact-circle-3 {
+        transform: translate(-50%, -180%);
+        bottom: 0px;
+    }
+
+
+    .to-the-top_wrapper{
+        left: 30px;
+    }
+}
+
+
+@media(max-width:350px){
+    .contact_left{
+        h2{
+            font-size: 2.5rem;
+        }
+    }
+
+
+    .to-the-top_wrapper{
+        bottom: 20px;
+    }
 }

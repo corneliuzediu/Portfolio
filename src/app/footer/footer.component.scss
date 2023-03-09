@@ -35,12 +35,18 @@ $second-font-family : 'Baloo 2';
     width: 175px;
 
     span {
+
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 64px;
-        height: 69px;
-        background-color: aqua;
+        width: 80px;
+        height: 80px;
+
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
+
     }
 }
 
@@ -84,7 +90,6 @@ $second-font-family : 'Baloo 2';
         &:hover {
             text-shadow: 1px 1px white;
             border-bottom: 2px solid white;
-
         }
     }
 }
@@ -92,12 +97,14 @@ $second-font-family : 'Baloo 2';
 .footer_logo-platforms {
     display: flex;
     justify-content: flex-end;
+    z-index: 1;
     gap: 42px;
     width: 175px;
 
     a {
         &:hover {
             scale: 1.2;
+            cursor: pointer;
         }
     }
 }
@@ -124,7 +131,7 @@ $second-font-family : 'Baloo 2';
     }
 
 
-    .footer_top{
+    .footer_top {
         flex-direction: column;
     }
 
@@ -144,5 +151,37 @@ $second-font-family : 'Baloo 2';
     .footer_bottom {
         padding-top: 30px;
         transform: unset;
+    }
+}
+
+
+@media(max-width:450px) {
+    .footer_wrapper {
+        padding-block: 30px;
+    }
+
+
+    .footer-logo{
+        span{
+            height: 35px;
+        }
+    }
+
+
+    .footer_top {
+        padding-inline: 30px;
+    }
+
+
+    .footer_center-top {
+        span {
+            font-size: 1.3rem;
+        }
+    }
+
+
+    .copyright {
+        align-self: center;
+        font-size: 18px
     }
 }

@@ -9,7 +9,6 @@ $second-font-family : 'Baloo 2';
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding-bottom: 250px;
     overflow-x: hidden;
 }
 
@@ -132,7 +131,6 @@ $second-font-family : 'Baloo 2';
     position: relative;
     display: flex;
     justify-content: center;
-    // min-height: 400px;
     max-width: 100%;
     margin-inline: 100px;
     margin-block: 80px;
@@ -242,6 +240,7 @@ $second-font-family : 'Baloo 2';
         border: 2px solid $base-color;
         border-radius: 10px;
         padding: 15px 30px;
+        font-size: 1.2rem;
         color: $base-color;
         transition: all 550ms ease-in-out;
         transform-origin: left;
@@ -282,9 +281,6 @@ $second-font-family : 'Baloo 2';
 
 
 @media(max-width:1300px) {
-    .projects-board_wrapper {
-        padding-bottom: 120px;
-    }
 
     .projects-board_circle-2 {
         width: 200px;
@@ -321,6 +317,7 @@ $second-font-family : 'Baloo 2';
         justify-content: center;
         align-items: center;
         text-align: center;
+        width: 70%;
 
         h2,
         h3,
@@ -335,13 +332,13 @@ $second-font-family : 'Baloo 2';
 
     .projects-board_circle-3 {
         top: 450px;
-        transform: translateX(-35%) rotate(82deg);
+        transform: translateX(-55%) rotate(82deg);
     }
 
 
     .projects-board_circle-4 {
         top: 0px;
-        transform: translateX(35%) rotate(82deg);
+        transform: translateX(40%) rotate(82deg);
 
     }
 
@@ -358,7 +355,7 @@ $second-font-family : 'Baloo 2';
         position: absolute;
         z-index: -1;
         bottom: 0px;
-        left: 0px;
+        left: -60px;
         width: 240px;
         height: 240px;
         border-radius: 100%;
@@ -369,6 +366,7 @@ $second-font-family : 'Baloo 2';
 
     .projects-board_circle-7 {
         transform: translateY(-50%);
+        right: -30px;
     }
 
 
@@ -388,5 +386,335 @@ $second-font-family : 'Baloo 2';
             width: 100%;
             height: auto;
         }
+    }
+}
+
+
+@media(max-width:900px) {
+    .projects-board_circle-4 {
+        transform: translateX(55%) rotate(82deg);
+    }
+
+    .projects-board_circle-6-2 {
+        left: unset;
+        right: 90%;
+    }
+
+    .projects-board_circle-3 {
+        transform: translateX(-55%) rotate(82deg);
+    }
+}
+
+
+@media(max-width:800px) {
+    .projects-board_title {
+        margin-top: 50px;
+        margin-inline: 50px;
+
+        h2 {
+            width: 100%;
+        }
+    }
+
+
+    .project_wrapper {
+        margin-inline: 50px;
+        margin-block: 30px;
+    }
+
+    .project-img-holder-left,
+    .project-img-holder-right {
+        img:hover {
+            scale: 1.05;
+            transform: translateY(-10px);
+        }
+    }
+
+
+    .project-buttons {
+        gap: 30px;
+
+        button {
+            font-size: 1.5rem;
+        }
+    }
+
+    .white-text {
+
+        h2,
+        h3,
+        p {
+            color: white;
+            text-shadow: 1px 1px black;
+        }
+    }
+
+    .white-button {
+        button {
+            text-shadow: 1px 1px black;
+            color: white;
+            border: 1px solid white;
+
+
+            &:hover,
+            &:focus {
+                color: $base-color;
+                text-shadow: unset;
+                background: white
+            }
+        }
+    }
+
+    .projects-board_circle-1 {
+        width: 80px;
+        height: 80px;
+        left: 80%;
+        top: -20px;
+    }
+
+
+    .projects-board_circle-2 {
+        top: 275px;
+        right: unset;
+        left: 80%;
+    }
+
+
+    .projects-board_circle-3 {
+        top: 320px;
+        left: 54%;
+        width: 500px;
+        height: 500px;
+    }
+
+
+    .projects-board_circle-4 {
+        transform: translateX(70%) rotate(82deg);
+    }
+
+
+    .projects-board_circle-5 {
+        transform: unset;
+    }
+}
+
+
+@media(max-width:600px) {
+    .project-buttons {
+        button {
+            font-size: 1rem;
+        }
+    }
+
+
+    .project-info {
+        width: 90%;
+    }
+
+    .projects-board_circle-1 {
+        width: 50px;
+        height: 50px;
+        left: 95%;
+    }
+
+
+    .projects-board_circle-3 {
+        top: 200px
+    }
+
+
+    .projects-board_circle-4 {
+        top: unset;
+        bottom: 230px;
+        right: -30px;
+        width: 60px;
+        height: 60px;
+        transform: rotate(82deg);
+    }
+
+
+    .projects-board_circle-5 {
+        left: -40px;
+        top: -220px;
+    }
+
+
+    .projects-board_circle-6 {
+        top: 120px;
+        right: -20px;
+    }
+
+
+    .projects-board_circle-6-2 {
+        right: 430px;
+    }
+
+    .projects-board_circle-7 {
+        bottom: 230px;
+        right: -53px;
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+@media(max-width:500px) {
+    .projects-board_title {
+        h2 {
+            font-size: 68px;
+            padding-bottom: 15px;
+        }
+    }
+
+
+    .project_wrapper {
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+
+
+    .projects-board_circle-3 {
+        top: 230px;
+        left: 0px;
+        width: 50px;
+        height: 50px;
+    }
+
+
+    .white-text {
+
+        h2,
+        h3 {
+            color: $base-color;
+            text-shadow: unset;
+        }
+
+        p {
+            color: black;
+            text-shadow: unset;
+        }
+    }
+
+    .white-button {
+        button {
+            background: unset;
+            border: 2px solid $base-color;
+            color: $base-color;
+            text-shadow: unset;
+
+            &:hover {
+                background: $bg-gradient;
+                color: white;
+            }
+        }
+    }
+}
+
+
+@media(max-width:450px) {
+    .projects-board_title {
+        margin-bottom: 0px;
+        margin-inline: 30px;
+
+        h2 {
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+
+
+    .project-info {
+        width: 100%;
+
+        h2 {
+            font-size: 2.2rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+    }
+
+
+    .project_wrapper {
+        margin-inline: 30px;
+    }
+
+
+    .project-buttons {
+        button {
+            padding: 10px 20px;
+        }
+    }
+
+
+    .projects-board_circle-1 {
+        left: 80%;
+    }
+
+    .projects-board_circle-5 {
+        top: -100px
+    }
+}
+
+
+@media(max-width:350px) {
+    .projects-board_title {
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+
+
+    .project-info {
+        h2 {
+            font-size: 2rem;
+        }
+
+        h3 {
+            font-size: 1rem;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+
+
+    .project-buttons {
+        gap: 10px;
+    }
+
+
+    .projects-board_circle-1 {
+        left: 100%;
+        top: -45px;
+    }
+
+
+    .projects-board_circle-3 {
+        top: 170px;
+        left: -10px;
+    }
+
+
+    .projects-board_circle-4{
+        right: -40px;
+    }
+
+
+    .projects-board_circle-5{
+        display: none;
     }
 }

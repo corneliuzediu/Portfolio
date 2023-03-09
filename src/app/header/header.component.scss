@@ -1,4 +1,9 @@
 $base-color: #57E8A2;
+$bg-gradient: radial-gradient(74.22% 74.22% at 19.79% 22.42%, $base-color 51.56%, #33B476 100%);
+$main-font-family : "Montserrat",
+sans-serif;
+$second-font-family : 'Baloo 2';
+$width-title: auto;
 $font-size-large: 45px;
 $font-size-medium: 23px;
 $font-size-small: 16px;
@@ -9,14 +14,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 47.5px;
+    margin-inline: 100px;
 
     ul {
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 50px;
-        margin-top: 47.5px;
-        padding-right: 98.5px;
 
         div {
             width: 120px;
@@ -41,15 +46,51 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 64px;
-    height: 69px;
-    background-color: aqua;
+    width: 80px;
+    height: 80px;
+
+    img {
+        width: 100%;
+        object-fit: contain;
+    }
 }
 
 .to-the-top_wrapper {
     position: sticky;
     left: 100px;
     top: 200svh;
+}
+
+app-header-mobil {
+    display: none;
+}
+
+
+@media(max-height:750px) and (max-width:1000px) {
+    header {
+        margin-left: 50px;
+    }
+}
+
+
+@media(max-height:450px) {
+    header {
+        margin-right: 50px;
+
+        ul {
+            display: none;
+        }
+    }
+
+    app-header-mobil {
+        display: block;
+    }
+}
+
+@media(max-width:1500px) {
+    header {
+        margin-top: 30px;
+    }
 }
 
 
@@ -64,14 +105,50 @@ header {
 
 @media(max-width:1200px) {
     header {
-        ul {
-            padding-right: 50px;
-        }
+        margin-right: 6vw;
     }
 }
 
-@media(max-width:1000px){
-    .header-pc{
-        display: none;
+
+@media(max-width:1000px) {
+    header {
+        margin-right: 50px;
+
+        ul {
+            display: none;
+        }
+    }
+
+    app-header-mobil {
+        display: block;
+    }
+}
+
+
+@media(max-width:800px) {
+    header {
+        margin-inline: 50px;
+    }
+}
+
+
+@media(max-width:650px) {
+    header {
+        margin-top: 20px;
+    }
+}
+
+
+@media(max-width:550px) {
+    header {
+        margin-right: 30px;
+    }
+}
+
+
+@media(max-width:450px) {
+    header {
+        margin-top: 10px;
+        margin-inline: 30px;
     }
 }

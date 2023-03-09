@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import { HeaderMobilComponent } from './header-mobil/header-mobil.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { MatIconModule } from '@angular/material/icon';
     SkillsSetComponent,
     ProjectsBoardComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderMobilComponent
   ],
   imports: [
     BrowserModule,

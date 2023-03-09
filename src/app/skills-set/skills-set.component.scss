@@ -1,6 +1,7 @@
 $base-color: #57E8A2;
 $bg-gradient: radial-gradient(74.22% 74.22% at 19.79% 22.42%, $base-color 51.56%, #33B476 100%);
-$main-font-family : "Montserrat", sans-serif;
+$main-font-family : "Montserrat",
+sans-serif;
 $second-font-family : 'Baloo 2';
 
 .skills-set_wrapper {
@@ -20,7 +21,7 @@ $second-font-family : 'Baloo 2';
     font-family: $second-font-family;
     font-size: 96px;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 45px;
 }
 
 
@@ -66,16 +67,98 @@ $second-font-family : 'Baloo 2';
 }
 
 
-@media(max-width:1300px){
-.skills-set_wrapper{
-    height: auto;
-    padding-block: 100px;
-    
-}
+@media(max-width:1300px) {
+    .skills-set_wrapper {
+        height: auto;
+        padding-block: 100px;
 
-    .skills-set_board{
+    }
+
+    .skills-set_board {
         justify-content: center;
         width: unset;
         padding-inline: 100px;
+    }
+}
+
+
+@media(max-width:800px) {
+    .skills-set_wrapper {
+        width: unset;
+        padding-inline: 50px;
+        padding-bottom: 60px;
+    }
+
+
+    .skills-set_board {
+        padding: unset;
+        gap: 101px;
+        row-gap: 30px;
+    }
+}
+
+
+@media(max-width:500px) {
+    .skills-set_title {
+        font-size: 68px;
+        margin-bottom: 20px;
+    }
+
+
+    .skill {
+        div {
+            width: 60px;
+
+            img {
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+
+
+    .skills-set_board {
+        gap: 70px;
+        row-gap: 20px;
+    }
+}
+
+
+@media(max-width:450px) {
+    .skills-set_wrapper {
+        padding-block: 50px;
+        padding-inline: 30px;
+    }
+
+
+    .skills-set_title {
+        font-size: 3rem;
+    }
+
+
+    .skills-set_board {
+        gap: 70px;
+        row-gap: 30px;
+    }
+
+    .skill {
+        height: 100px;
+
+        div {
+            width: 50px;
+        }
+    }
+}
+
+
+@media(max-width:350px) {
+    .skills-set_title {
+        margin-bottom: 0px;
+        font-size: 2.5rem;
+    }
+
+
+    .skills-set_board {
+        row-gap: 20px;
     }
 }

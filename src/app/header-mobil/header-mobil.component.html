@@ -1,0 +1,22 @@
+<div class="cursor-pointer" (click)="event='showMenuMobile'" [ngClass]="status ? '' : ''">
+    <img src="../../assets/icons/burger_menu.png" alt="">
+</div>
+<div class="menu-mobil" [@fadeIn]="event">
+    <div class="menu-mobil_top">
+        <div class="header-logo"><img src="../../assets/icons/logo.png"></div>
+        <div class="cursor-pointer" (click)="event='hideMenuMobile'">
+            <img src="../../assets/icons/close_menu.png" alt="">
+        </div>
+    </div>
+    <ul class="menu-mobil_bottom">
+        <div>
+            <a (click)="goToAboutMe(); event='hideMenuMobile' ">About me</a>
+        </div>
+        <div>
+            <a (click)="goToSkillsSet(); event='hideMenuMobile'">Skills set</a>
+        </div>
+        <div>
+            <a (click)="goToProjectsBoard(); event='hideMenuMobile'">My work</a>
+        </div>
+    </ul>
+</div>
