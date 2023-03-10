@@ -243,7 +243,7 @@ $second-font-family : 'Baloo 2';
         font-size: 1.2rem;
         color: $base-color;
         transition: all 550ms ease-in-out;
-        transform-origin: left;
+        transform-origin: top center;
 
         &:hover {
             transform: scaleX(1.1);

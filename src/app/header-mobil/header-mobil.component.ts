@@ -1,7 +1,6 @@
 import { ViewportScroller } from '@angular/common';
 import { Component, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatDialogRef } from '@angular/material/dialog';
 import {
   trigger,
   state,
@@ -62,12 +61,13 @@ export class HeaderMobilComponent {
     this.scroller.scrollToAnchor("projects-board");
   }
 
+  
   goToTheTop() {
     this.scroller.scrollToAnchor('top')
   }
 
+
   showMenu() {
     this.status = !this.status;
-
   }
 }

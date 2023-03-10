@@ -19,7 +19,24 @@
             <textarea type="text" placeholder="Your message" name="message" #messageContact required></textarea>
             <button #sentButton>Say hello ;&#41;</button>
         </form>
-
+    </div>
+    <div class="contact_animations">
+        <div #sendingAnimation class="d-none contact_waiting-animation">
+            <mat-progress-spinner class="example-margin" [color]="color" [mode]="mode"></mat-progress-spinner>
+        </div>
+        <div #succesfullySubmited class="contact_succes-submit d-none">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Form succesfully submited</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>Thank you for your contact.</p>
+                </mat-card-content>
+                <div #flyIcon class="contact_send-icon">
+                    <mat-icon>send</mat-icon>
+                </div>
+            </mat-card>
+        </div>
     </div>
     <div class="to-the-top_wrapper">
         <button mat-icon-button (click)="goToTheTop()">

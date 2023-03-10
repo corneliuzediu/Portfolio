@@ -15,6 +15,9 @@ import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { HeaderMobilComponent } from './header-mobil/header-mobil.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatCardModule } from '@angular/material/card';
+
 
 
 @NgModule({
@@ -36,6 +39,8 @@ import { HeaderMobilComponent } from './header-mobil/header-mobil.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MatProgressSpinnerModule,
+    MatCardModule
 
   ],
   providers: [],

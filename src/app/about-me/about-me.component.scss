@@ -53,8 +53,8 @@ $second-font-family : 'Baloo 2';
         border-radius: 10px;
         padding: 15px 30px;
         color: $base-color;
-        transition: all 350ms ease-in-out;
-        transform-origin: top left;
+        transition: all 500ms ease-in-out;
+        transform-origin: top center;
         font-size: 19px;
 
 
@@ -69,9 +69,8 @@ $second-font-family : 'Baloo 2';
             z-index: -1;
             border-radius: 12px;
             transform: scale(0);
-            transform-origin: left top;
-            transition: transform 300ms ease-in-out;
-
+            transform-origin: top center;
+            transition: transform 500ms ease-in-out;
         }
 
         &:hover,
@@ -87,8 +86,7 @@ $second-font-family : 'Baloo 2';
         &:focus::before {
             border-radius: 8px;
             transform: scale(1);
-            // filter: brightness(1.4);
-            // animation: sendMessage;
+
         }
     }
 }

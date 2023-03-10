@@ -545,7 +545,7 @@ $width-title: auto;
     .top-section__main-img {
 
         img {
-            width: clamp(400px, 100%, 55svh);
+            width: clamp(400px, 100%, 53svh);
             max-height: 65svh;
             object-fit: contain;
             z-index: 5;
@@ -578,6 +578,11 @@ $width-title: auto;
     .top-section_logo-white-platforms,
     .top-section__scroll {
         display: none;
+    }
+
+
+    .top-section__main-img{
+        justify-content: center;
     }
 }
 

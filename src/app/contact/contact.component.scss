@@ -5,6 +5,15 @@ sans-serif;
 $second-font-family : 'Baloo 2';
 $width-title: auto;
 
+:root {
+    --mdc-circular-progress-active-indicator-color: $base-color !important;
+}
+
+
+.d-none {
+    display: none;
+}
+
 .contact_wrapper {
     position: relative;
     display: flex;
@@ -63,6 +72,7 @@ $width-title: auto;
     align-self: flex-start;
     min-width: calc(50% - 100px);
     margin-right: 100px;
+    z-index: 1;
 
     form {
         margin-top: 140px;
@@ -164,6 +174,115 @@ $width-title: auto;
         }
     }
 }
+
+
+.contact_animations {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contact_waiting-animation {
+    z-index: 1;
+}
+
+
+.mat-mdc-progress-spinner.mat-accent {
+    --mdc-circular-progress-active-indicator-color: rgb(87 232 162);
+}
+
+
+.contact_succes-submit {
+    position: fixed;
+    top: 50%;
+    width: calc(100% - 200px);
+    max-width: 700px;
+    transform: translateY(-50%);
+    z-index: 10;
+    margin-inline: 100px;
+
+    mat-card {
+        position: relative;
+        background: $bg-gradient;
+        padding: 20px 30px;
+        border-radius: 20px;
+
+        mat-card-title {
+            font-size: 2rem;
+            color: white;
+            text-shadow: 1px 1px black;
+            font-family: $second-font-family ;
+            padding-bottom: 20px;
+        }
+
+        mat-card-content {
+            p {
+                font-family: $main-font-family;
+                font-size: 1rem;
+                padding-bottom: 20px;
+                color: white;
+                text-shadow: 1px 1px black;
+            }
+        }
+
+
+    }
+}
+
+
+.contact_send-icon {
+    position: absolute;
+    right: 15%;
+    top: 80%;
+    rotate: -30deg;
+    transform: translate(0%, -100%) scale(1.5);
+
+
+    mat-icon {}
+}
+
+
+.flying-animation {
+    transform: translate(0%, -100%) scale(1.5);
+    animation: flyIconAnimation 1000ms ease-in;
+}
+
+@keyframes flyIconAnimation {
+    0% {
+        transform: translate(0%, -100%) scale(1.5);
+    }
+
+    20% {
+        transform: translate(80%, -120%) scale(1.4);
+    }
+
+    40% {
+        transform: translate(160%, -140%) scale(1.3);
+    }
+
+    60% {
+        transform: translate(240%, -160%)scale(1.2);
+    }
+
+    80% {
+        transform: translate(320%, -180%) scale(1.1);
+    }
+
+
+    100% {
+        transform: translate(400%, -210%) scale(1);
+    }
+
+
+
+}
+
 
 .contact-circle-1 {
     position: absolute;
@@ -277,13 +396,41 @@ $width-title: auto;
         }
     }
 
+
+    .contact_succes-submit {
+        margin-inline: 50px;
+    }
+
+    .contact_send-icon {
+        top: 76%;
+        right: 9%;
+        rotate: 325deg;
+    }
+
     .contact-circle-1 {
         top: 90px;
         right: -80px;
     }
 
     .contact-circle-2 {
-        top: 330%;
+        top: 290%;
+    }
+}
+
+
+@media(max-width:700px) {
+    .contact_succes-submit {
+        width: calc(100% - 100px);
+        margin-inline: 50px;
+
+        mat-card {
+            padding: 15px 20px;
+        }
+    }
+
+
+    .contact_send-icon {
+        top: -10%;
     }
 }
 
@@ -293,6 +440,13 @@ $width-title: auto;
         padding-right: 0px;
     }
 
+    .contact_succes-submit {
+        mat-card {
+            mat-card-title {
+                font-size: 1.5rem;
+            }
+        }
+    }
 
     .contact-circle-2 {
         top: 800px;
@@ -302,6 +456,8 @@ $width-title: auto;
     .to-the-top_wrapper {
         left: 50px;
     }
+
+
 }
 
 
@@ -311,8 +467,11 @@ $width-title: auto;
             font-size: 68px;
             margin-bottom: 20px;
         }
+    }
 
 
+    .contact_succes-submit {
+        text-align: center;
     }
 }
 
@@ -339,6 +498,18 @@ $width-title: auto;
         margin-inline: 30px;
     }
 
+    .contact_succes-submit {
+        width: calc(100% - 60px);
+        margin-inline: 30px;
+
+        mat-card {
+            mat-card-header {
+                padding-inline: unset;
+                align-self: center;
+            }
+        }
+    }
+
 
     .contact-circle-3 {
         transform: translate(-50%, -180%);
@@ -346,21 +517,36 @@ $width-title: auto;
     }
 
 
-    .to-the-top_wrapper{
+    .to-the-top_wrapper {
         left: 30px;
     }
 }
 
 
-@media(max-width:350px){
-    .contact_left{
-        h2{
+@media(max-width:350px) {
+    .contact_left {
+        h2 {
             font-size: 2.5rem;
         }
     }
 
 
-    .to-the-top_wrapper{
+    .to-the-top_wrapper {
         bottom: 20px;
+    }
+
+
+    .contact_succes-submit {
+        mat-card {
+            mat-card-title {
+                font-size: 1.2rem;
+            }
+
+            mat-card-content {
+                p {
+                    font-size: 0.8rem;
+                }
+            }
+        }
     }
 }
