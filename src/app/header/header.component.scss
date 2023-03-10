@@ -24,7 +24,9 @@ header {
         gap: 50px;
 
         div {
-            width: 120px;
+            width: 130px;
+            display: flex;
+            justify-content: center;
 
             a {
                 text-decoration: none;
