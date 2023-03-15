@@ -1,0 +1,228 @@
+$base-color: #57E8A2;
+$bg-gradient: radial-gradient(74.22% 74.22% at 19.79% 22.42%, $base-color 51.56%, #33B476 100%);
+$main-font-family : "Montserrat",
+sans-serif;
+$second-font-family : 'Baloo 2';
+
+
+.data-protection_wrapper {
+    position: absolute;
+    overflow-x: hidden;
+    background: linear-gradient(260deg, #FFFFFF 12.89%, #D7FFEC 91.39%);
+}
+
+
+.data-protection_body {
+    position: relative;
+    padding: 100px;
+
+    h1 {
+        font-size: 3rem;
+        padding-bottom: 40px;
+        font-family: $second-font-family;
+    }
+
+    h2 {
+        font-size: 2rem;
+        padding-top: 30px;
+        padding-bottom: 10px;
+        font-family: $main-font-family
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        font-family: $main-font-family;
+    }
+
+    p {
+        text-align: justify;
+        font-size: 1rem;
+        font-family: $main-font-family;
+    }
+
+    a {
+        text-align: justify;
+        font-size: 1rem;
+        font-family: $main-font-family;
+        cursor: pointer;
+    }
+
+
+
+    ul {
+        text-align: justify;
+        padding-bottom: 20px;
+    }
+}
+
+
+.data-protection_back-to-main {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding-top: 100px;
+    padding-right: 100px;
+
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        color: $base-color;
+        border: 1px solid $base-color;
+        border-radius: 100%;
+        height: 40px;
+        width: 40px;
+
+        &:focus,
+        &:hover {
+            background: $bg-gradient;
+            color: white;
+            border: unset;
+        }
+    }
+}
+
+
+.data-protection_language {
+    position: absolute;
+    display: flex;
+    gap: 20px;
+    top: 30px;
+    right: 0px;
+    padding-right: 100px;
+
+    button {
+        background: none;
+        color: $base-color;
+        border: 1px solid $base-color;
+        border-radius: 30px;
+
+        mat-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            padding-inline: 5px;
+            padding-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        &:focus,
+        &:hover {
+            background: $bg-gradient;
+            color: white;
+            border: 1px solid white;
+        }
+    }
+}
+
+
+@media(max-width:1000px) {
+    .data-protection_back-to-main {
+        padding-right: 50px;
+    }
+
+
+    .data-protection_language {
+        padding-right: 50px;
+    }
+
+
+    .data-protection_body {
+        h1 {
+            padding-block: 20px;
+            margin: unset;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+        }
+
+    }
+}
+
+
+@media(max-width:800px) {
+    .data-protection_back-to-main {
+        padding-top: 28px;
+        padding-left: 50px;
+        right: unset;
+        left: 0px;
+    }
+
+
+    .data-protection_body {
+        padding-inline: 50px;
+    }
+}
+
+
+@media(max-width:650px){
+    .data-protection_wrapper{
+        margin-top: 15px;
+    }
+}
+
+
+@media(max-width:600px) {
+    .data-protection_body {
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+        }
+
+        p,
+        ul,
+        a {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+
+@media(max-width:450px) {
+    .data-protection_back-to-main {
+        padding-left: 30px;
+    }
+
+
+    .data-protection_language {
+        padding-right: 30px;
+        gap:10px;
+
+        button {
+            mat-icon {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    .data-protection_body {
+        padding: 30px;
+        padding-top: 80px;
+        white-space: break-spaces;
+
+        h1 {
+            padding-bottom: unset;
+            word-break: break-word;
+        }
+
+        h2 {
+            word-break: break-word;
+            padding-top: 20px;
+            margin: 0px;
+        }
+
+
+        a,
+        p,
+        li {
+            word-break: break-word;
+        }
+    }
+}

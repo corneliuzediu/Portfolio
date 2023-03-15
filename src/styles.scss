@@ -1,20 +1,16 @@
 $base-color: #57E8A2;
 
+
 body,
 html {
     margin: 0;
     font-family: 'Montserrat', sans-serif !important;
     scroll-behavior: smooth;
-    // overflow-x: hidden;
 }
+
 
 button {
     cursor: pointer;
     outline: unset;
     font-family: inherit;
-}
-
-html,
-body {
-    height: 100%;
 }

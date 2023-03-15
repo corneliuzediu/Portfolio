@@ -103,12 +103,12 @@ export class ContactComponent implements OnInit {
   waitingTime(interval) {
     let sinceClicked = new Date;
     this.waitedTime = this.initTime.getTime() - sinceClicked.getTime();
-    if (this.waitedTime < -1000 && this.responseBackend.status == 302) {
+    if (this.waitedTime < -1500 && this.responseBackend.status >= 300 && this.responseBackend.status < 400) {
       clearInterval(interval)
       this.sendingAnimation.nativeElement.classList.add('d-none')
       this.succesfullySubmited.nativeElement.classList.remove('d-none')
       this.provideAnimation();
-      setTimeout(() => this.removeAnimation(), 1000)
+      setTimeout(() => this.removeAnimation(), 1500)
 
     }
   }

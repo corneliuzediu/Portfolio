@@ -22,8 +22,59 @@ export class FooterComponent {
     this.date = newDate.getFullYear();
   }
 
+
   goToContact() {
-    this.scroller.setOffset([0, 100])
-    this.scroller.scrollToAnchor("contact");
+    if (this.getLocation() != '/') {
+      let i = this.router.navigateByUrl('');
+      setTimeout(() => {
+        this.scroller.setOffset([0, 100]);
+        this.scroller.scrollToAnchor("contact");
+      }, 300);
+    }
+
+    if (this.getLocation() == '/') {
+      this.scroller.setOffset([0, 100]);
+      this.scroller.scrollToAnchor("contact");
+    }
+
   }
+
+
+  goToImpressum() {
+    this.router.navigateByUrl('/impressum');
+  }
+
+
+  goToDataProtection() {
+    this.router.navigateByUrl('/data-protection');
+  }
+
+
+  goToPrivacyPolicy() {
+    this.router.navigateByUrl('/privacy-policy');
+  }
+
+
+  goToTheTop() {
+    this.scroller.scrollToAnchor("top");
+  }
+
+
+  goToMainTop() {
+    if (this.getLocation() != '/') {
+      this.router.navigateByUrl('');
+    }
+
+    if (this.getLocation() == '/') {
+      this.goToTheTop();
+    }
+  }
+
+
+  getLocation() {
+    let url = window.location.href;
+    let location = url.substring(url.lastIndexOf(('/')));
+    return location;
+  }
+
 }

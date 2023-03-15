@@ -34,6 +34,7 @@ header {
                 font-size: $font-size-medium;
                 font-weight: 400;
                 transition: all 150ms ease-in-out;
+                cursor: pointer;
 
                 &:hover {
                     font-weight: 600;
@@ -54,14 +55,30 @@ header {
     img {
         width: 100%;
         object-fit: contain;
+        cursor: pointer;
     }
 }
+
+.header-logo-green {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    cursor: pointer;
+
+    img {
+        width: 100%;
+        object-fit: contain;
+    }
+}
+
 
 .to-the-top_wrapper {
     position: sticky;
     left: 100px;
     top: 200svh;
 }
+
 
 app-header-mobil {
     display: none;

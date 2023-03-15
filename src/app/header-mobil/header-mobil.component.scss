@@ -119,3 +119,12 @@ $width-title: auto;
         }
     }
 }
+
+
+@media(max-width:450px){
+    .menu-mobil_bottom{
+        a{
+            font-size: 1.5rem;
+        }
+    }
+}

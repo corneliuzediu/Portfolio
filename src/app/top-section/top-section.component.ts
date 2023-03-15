@@ -1,5 +1,5 @@
 import { ViewportScroller } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./top-section.component.scss']
 })
 export class TopSectionComponent {
+  @ViewChild('topTitle') topTitle!: ElementRef;
+
   constructor(private scroller: ViewportScroller, private router: Router) { }
 
   goToContact() {

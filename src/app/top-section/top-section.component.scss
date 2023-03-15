@@ -132,6 +132,7 @@ $width-title: auto;
     img {
         width: 30px;
         height: 30px;
+        cursor: pointer;
     }
 
     a {
@@ -147,6 +148,10 @@ $width-title: auto;
 .top-section_logo-white-platforms {
     display: none;
     z-index: 6;
+
+    img {
+        cursor: pointer;
+    }
 }
 
 
@@ -523,7 +528,7 @@ $width-title: auto;
     .top-section__bg-circle {
         width: 1000px;
         height: 1000px;
-        top: 0px;
+        top: -15px;
         left: unset;
         right: 0px;
         transform: translate(-6%, -6%);
@@ -581,7 +586,7 @@ $width-title: auto;
     }
 
 
-    .top-section__main-img{
+    .top-section__main-img {
         justify-content: center;
     }
 }

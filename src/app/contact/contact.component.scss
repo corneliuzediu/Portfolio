@@ -190,6 +190,9 @@ $width-title: auto;
 
 .contact_waiting-animation {
     z-index: 1;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 
@@ -250,7 +253,7 @@ $width-title: auto;
 
 .flying-animation {
     transform: translate(0%, -100%) scale(1.5);
-    animation: flyIconAnimation 1000ms ease-in;
+    animation: flyIconAnimation 1500ms ease-in;
 }
 
 @keyframes flyIconAnimation {

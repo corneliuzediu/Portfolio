@@ -48,20 +48,42 @@ export class HeaderMobilComponent {
 
 
   goToAboutMe() {
-    this.scroller.scrollToAnchor('about-me')
+    if (this.getLocation() != '/') {
+      let i = this.router.navigateByUrl('');
+      setTimeout(() => this.scroller.scrollToAnchor('about-me'), 300);
+    }
+
+    if (this.getLocation() == '/') {
+      this.scroller.scrollToAnchor('about-me')
+    }
   }
 
 
   goToSkillsSet() {
-    this.scroller.scrollToAnchor("skills-set");
+    if (this.getLocation() != '/') {
+      let i = this.router.navigateByUrl('');
+      setTimeout(() => this.scroller.scrollToAnchor("skills-set"), 300);
+    }
+
+    if (this.getLocation() == '/') {
+      this.scroller.scrollToAnchor("skills-set");
+    }
   }
 
 
   goToProjectsBoard() {
-    this.scroller.scrollToAnchor("projects-board");
+    if (this.getLocation() != '/') {
+      let i = this.router.navigateByUrl('');
+      setTimeout(() => this.scroller.scrollToAnchor("projects-board"), 300);
+    }
+
+    if (this.getLocation() == '/') {
+      this.scroller.scrollToAnchor("projects-board");
+
+    }
   }
 
-  
+
   goToTheTop() {
     this.scroller.scrollToAnchor('top')
   }
@@ -69,5 +91,12 @@ export class HeaderMobilComponent {
 
   showMenu() {
     this.status = !this.status;
+  }
+
+
+  getLocation() {
+    let url = window.location.href;
+    let location = url.substring(url.lastIndexOf(('/')));
+    return location;
   }
 }

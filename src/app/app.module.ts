@@ -17,6 +17,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { HeaderMobilComponent } from './header-mobil/header-mobil.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
+import { ImpressumComponent } from './impressum/impressum.component';
+import { MainPageComponent } from './main-page/main-page.component';
+import { DataProtectionComponent } from './data-protection/data-protection.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 
 
@@ -30,7 +34,11 @@ import { MatCardModule } from '@angular/material/card';
     ProjectsBoardComponent,
     ContactComponent,
     FooterComponent,
-    HeaderMobilComponent
+    HeaderMobilComponent,
+    ImpressumComponent,
+    MainPageComponent,
+    DataProtectionComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     BrowserModule,

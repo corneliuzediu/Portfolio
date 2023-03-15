@@ -1,6 +1,7 @@
 <div class="footer_wrapper">
     <div class="footer_top">
-        <div class="footer-logo"> <span><img src="../../assets/icons/logo_white.png"></span> </div>
+        <div class="footer-logo"> <span (click)="goToMainTop()"><img src="../../assets/icons/logo_white.png"></span>
+        </div>
         <div class="footer_center">
             <div class="footer_center-top">
                 <mat-icon class="copyright">copyright</mat-icon>
@@ -17,7 +18,12 @@
     </div>
     <div class="footer_bottom">
         <div class="footer_center-bottom">
-            <a href=""> Impressum</a>
+            <div>
+                <a (click)="goToImpressum()"> Impressum</a>
+            </div>
+            <div>
+                <a (click)="goToPrivacyPolicy()"> Privacy Policy</a>
+            </div>
         </div>
     </div>
 </div>
