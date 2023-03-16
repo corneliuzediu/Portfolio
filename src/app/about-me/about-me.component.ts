@@ -11,7 +11,6 @@ export class AboutMeComponent {
   constructor(private scroller: ViewportScroller, private router: Router) { }
 
   goToContact() {
-    this.scroller.setOffset([0, 100])
     this.scroller.scrollToAnchor("contact");
   }
 }

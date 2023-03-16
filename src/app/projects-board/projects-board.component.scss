@@ -137,7 +137,7 @@ $second-font-family : 'Baloo 2';
 }
 
 
-.project-img-holder-left {
+.project-info.project-img-holder-left {
     position: relative;
     display: flex;
     justify-content: flex-end;
@@ -195,6 +195,7 @@ $second-font-family : 'Baloo 2';
         padding-left: 80px;
         font-weight: 700;
         line-height: 120%;
+        text-align: center !important;
     }
 
     h3 {
@@ -202,12 +203,14 @@ $second-font-family : 'Baloo 2';
         color: $base-color;
         padding-left: 80px;
         line-height: 120%;
+        text-align: center !important;
     }
 
     p {
         font-size: 16px;
         padding-left: 80px;
         line-height: 120%;
+        text-align: justify !important;
     }
 }
 

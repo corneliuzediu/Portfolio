@@ -109,8 +109,8 @@ export class ContactComponent implements OnInit {
       this.succesfullySubmited.nativeElement.classList.remove('d-none')
       this.provideAnimation();
       setTimeout(() => this.removeAnimation(), 1500)
-
     }
+    setTimeout(() => this.removeAnimation(), 5000)
   }
 
 

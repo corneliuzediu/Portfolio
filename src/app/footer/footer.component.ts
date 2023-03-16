@@ -27,13 +27,11 @@ export class FooterComponent {
     if (this.getLocation() != '/') {
       let i = this.router.navigateByUrl('');
       setTimeout(() => {
-        this.scroller.setOffset([0, 100]);
         this.scroller.scrollToAnchor("contact");
       }, 300);
     }
 
     if (this.getLocation() == '/') {
-      this.scroller.setOffset([0, 100]);
       this.scroller.scrollToAnchor("contact");
     }
 

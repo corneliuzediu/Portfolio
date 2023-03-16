@@ -95,6 +95,7 @@ $width-title: auto;
 
 @media(max-width:800px) {
     .menu-mobil {
+        position: fixed;
         width: 100%;
         height: 100svh;
     }

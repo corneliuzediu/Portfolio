@@ -157,7 +157,6 @@ $width-title: auto;
         border-radius: 100%;
         border: none;
         background: $bg-gradient;
-        transition: border 2500ms ease-in-out;
 
         mat-icon {
             color: white;
@@ -166,10 +165,10 @@ $width-title: auto;
         &:hover,
         &:focus {
             background: white;
-            border: 1px solid red;
+            border: 2px solid $base-color;
 
             mat-icon {
-                color: red;
+                color: $base-color;
             }
         }
     }
