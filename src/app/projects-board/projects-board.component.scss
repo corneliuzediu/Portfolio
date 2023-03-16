@@ -137,7 +137,7 @@ $second-font-family : 'Baloo 2';
 }
 
 
-.project-info.project-img-holder-left {
+.project-img-holder-left {
     position: relative;
     display: flex;
     justify-content: flex-end;
@@ -150,10 +150,12 @@ $second-font-family : 'Baloo 2';
         transform-origin: bottom;
         transition: all 250ms ease-in-out;
 
-        &:hover {
+        &:hover,
+        &:focus {
             scale: 1.1;
             transform-origin: bottom;
             transform: translateY(-20px);
+            cursor: pointer;
         }
     }
 }
@@ -171,10 +173,12 @@ $second-font-family : 'Baloo 2';
         transform-origin: bottom;
         transition: all 250ms ease-in-out;
 
-        &:hover {
+        &:hover,
+        &:focus {
             scale: 1.1;
             transform-origin: bottom;
             transform: translateY(-20px);
+            cursor: pointer;
         }
     }
 }
@@ -245,7 +249,7 @@ $second-font-family : 'Baloo 2';
         padding: 15px 30px;
         font-size: 1.2rem;
         color: $base-color;
-        transition: all 550ms ease-in-out;
+        transition: all 300ms ease-in-out;
         transform-origin: top center;
 
         &:hover {
@@ -284,14 +288,6 @@ $second-font-family : 'Baloo 2';
 
 
 @media(max-width:1300px) {
-
-    .projects-board_circle-2 {
-        width: 200px;
-        height: 200px;
-        top: 300px;
-        right: 90px;
-    }
-
     .project_wrapper {
         flex-direction: column;
         align-items: center;
@@ -333,6 +329,14 @@ $second-font-family : 'Baloo 2';
     }
 
 
+    .projects-board_circle-2 {
+        width: 200px;
+        height: 200px;
+        top: 280px;
+        right: 30px;
+    }
+
+
     .projects-board_circle-3 {
         top: 450px;
         transform: translateX(-55%) rotate(82deg);
@@ -358,7 +362,7 @@ $second-font-family : 'Baloo 2';
         position: absolute;
         z-index: -1;
         bottom: 0px;
-        left: -60px;
+        left: -80px;
         width: 240px;
         height: 240px;
         border-radius: 100%;
@@ -389,6 +393,17 @@ $second-font-family : 'Baloo 2';
             width: 100%;
             height: auto;
         }
+    }
+
+    
+    .projects-board_circle-6 {
+       right: 50px;
+    }
+
+
+    .projects-board_circle-6-2 {
+        bottom: 60px;
+        left: -150px;
     }
 }
 
@@ -543,18 +558,21 @@ $second-font-family : 'Baloo 2';
 
 
     .projects-board_circle-6 {
-        top: 120px;
+        top: unset;
+        bottom: 40px;
         right: -20px;
     }
 
 
     .projects-board_circle-6-2 {
-        right: 430px;
+        right: unset;
+        top: 40px;
+        left: -200px;
     }
 
     .projects-board_circle-7 {
-        bottom: 230px;
-        right: -53px;
+        bottom: 280px;
+        right: -80px;
         width: 80px;
         height: 80px;
     }
@@ -662,8 +680,24 @@ $second-font-family : 'Baloo 2';
         left: 80%;
     }
 
+
+    .projects-board_circle-4 {
+        bottom: 310px;
+    }
+
+
     .projects-board_circle-5 {
         top: -100px
+    }
+
+
+    .projects-board_circle-6{
+     right: -40px;
+    }
+
+
+    .projects-board_circle-6-2{
+        left: -245px;
     }
 }
 
@@ -712,12 +746,12 @@ $second-font-family : 'Baloo 2';
     }
 
 
-    .projects-board_circle-4{
+    .projects-board_circle-4 {
         right: -40px;
     }
 
 
-    .projects-board_circle-5{
+    .projects-board_circle-5 {
         display: none;
     }
 }
