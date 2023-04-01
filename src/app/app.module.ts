@@ -21,7 +21,7 @@ import { ImpressumComponent } from './impressum/impressum.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { DataProtectionComponent } from './data-protection/data-protection.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
-
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -48,7 +48,8 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
     BrowserAnimationsModule,
     MatIconModule,
     MatProgressSpinnerModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule
 
   ],
   providers: [],

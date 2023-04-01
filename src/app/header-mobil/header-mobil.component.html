@@ -1,11 +1,11 @@
 <div (click)="event='showMenuMobile'" [ngClass]="status ? '' : ''">
-    <img src="../../assets/icons/burger_menu.png" alt="">
+    <img src="./assets/icons/burger_menu.png" alt="">
 </div>
 <div class="menu-mobil" [@fadeIn]="event">
     <div class="menu-mobil_top">
-        <div class="header-logo"><img src="../../assets/icons/logo.png"></div>
+        <div class="header-logo"><img src="./assets/icons/logo.png"></div>
         <div class="cursor-pointer" (click)="event='hideMenuMobile'">
-            <img src="../../assets/icons/close_menu.png" alt="">
+            <img src="./assets/icons/close_menu.png" alt="">
         </div>
     </div>
     <ul class="menu-mobil_bottom">

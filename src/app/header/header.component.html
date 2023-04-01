@@ -1,10 +1,10 @@
 <header class="header-pc">
     <div class="header-logo" #logo *ngIf="getLocation() == '/'; else greenLogo"> <img (click)="goToMain()"
-            src="../../assets/icons/logo_white.png">
+            src="./assets/icons/logo_white.png">
     </div>
 
     <ng-template  #greenLogo><img class="header-logo-green" (click)="goToMain()"
-            src="../../assets/icons/logo.png"></ng-template>
+            src="./assets/icons/logo.png"></ng-template>
     <ul>
         <div>
             <a (click)="goToAboutMe()">About me</a>

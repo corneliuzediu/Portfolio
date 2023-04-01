@@ -3,6 +3,8 @@ import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ThemePalette } from '@angular/material/core';
 import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
+import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
 
 
 @Component({
@@ -21,12 +23,14 @@ export class ContactComponent implements OnInit {
   @ViewChild('succesfullySubmited') succesfullySubmited!: ElementRef;
   @ViewChild('flyIcon') flyIcon!: ElementRef;
 
+  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
 
   color: ThemePalette = 'accent';
   mode: ProgressSpinnerMode = 'indeterminate';
   responseBackend: any;
   public initTime: Date = new Date;
   waitedTime: any;
+  email: any;
 
   constructor(private scroller: ViewportScroller, private router: Router) { }
 
@@ -60,14 +64,16 @@ export class ContactComponent implements OnInit {
   async sendToBackend(nameContact, emailContact, messageContact) {
     let fd = new FormData();
     fd.append('name', nameContact.value);
+    console.log(fd.append('name', nameContact.value));
+    
     fd.append('email', emailContact.value);
     fd.append('message', messageContact.value)
-    this.responseBackend = await fetch('https://corneliu-zediu.developerakademie.net/Contact%20form/send_mail/send_mail.php',
-      {
-        method: 'POST',
-        body: fd,
-      }
-    );
+    // this.responseBackend = await fetch('https://corneliu-zediu.developerakademie.net/Contact%20form/send_mail/send_mail.php',
+    //   {
+    //     method: 'POST',
+    //     body: fd,
+    //   }
+    // );
   }
 
 
@@ -103,7 +109,7 @@ export class ContactComponent implements OnInit {
   waitingTime(interval) {
     let sinceClicked = new Date;
     this.waitedTime = this.initTime.getTime() - sinceClicked.getTime();
-    if (this.waitedTime < -1500 && this.responseBackend.status >= 300 && this.responseBackend.status < 400) {
+    if (this.waitedTime < -1500 && this.responseBackend.status >= 200 && this.responseBackend.status < 400) {
       clearInterval(interval)
       this.sendingAnimation.nativeElement.classList.add('d-none')
       this.succesfullySubmited.nativeElement.classList.remove('d-none')
