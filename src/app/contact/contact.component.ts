@@ -64,16 +64,14 @@ export class ContactComponent implements OnInit {
   async sendToBackend(nameContact, emailContact, messageContact) {
     let fd = new FormData();
     fd.append('name', nameContact.value);
-    console.log(fd.append('name', nameContact.value));
-    
     fd.append('email', emailContact.value);
     fd.append('message', messageContact.value)
-    // this.responseBackend = await fetch('https://corneliu-zediu.developerakademie.net/Contact%20form/send_mail/send_mail.php',
-    //   {
-    //     method: 'POST',
-    //     body: fd,
-    //   }
-    // );
+    this.responseBackend = await fetch('https://corneliu-zediu.developerakademie.net/Contact%20form/send_mail/send_mail.php',
+      {
+        method: 'POST',
+        body: fd,
+      }
+    );
   }
 
 
