@@ -3,8 +3,7 @@ import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ThemePalette } from '@angular/material/core';
 import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
-import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
-import { ErrorStateMatcher } from '@angular/material/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -23,14 +22,18 @@ export class ContactComponent implements OnInit {
   @ViewChild('succesfullySubmited') succesfullySubmited!: ElementRef;
   @ViewChild('flyIcon') flyIcon!: ElementRef;
 
-  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+
+  sendMessage = new FormGroup({
+    nameFormControl: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern("^[A-Za-z .'-]+$")]),
+    emailFormControl: new FormControl('',[Validators.required, Validators.pattern("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$")]),
+    messageFormControl: new FormControl('',[Validators.required, Validators.pattern("^[A-Za-z .'-]+$")]),
+  })
 
   color: ThemePalette = 'accent';
   mode: ProgressSpinnerMode = 'indeterminate';
   responseBackend: any;
   public initTime: Date = new Date;
   waitedTime: any;
-  email: any;
 
   constructor(private scroller: ViewportScroller, private router: Router) { }
 
@@ -72,6 +75,21 @@ export class ContactComponent implements OnInit {
         body: fd,
       }
     );
+  }
+
+  
+  get name() {
+    return this.sendMessage.get('nameFormControl');
+  }
+
+
+  get email() {
+    return this.sendMessage.get('emailFormControl');
+  }
+
+
+  get message() {
+    return this.sendMessage.get('messageFormControl');
   }
 
 

@@ -14,3 +14,13 @@ button {
     outline: unset;
     font-family: inherit;
 }
+
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: unset;
+}
+
+.mdc-text-field--valid {
+    border: 2px solid $base-color !important;
+
+}

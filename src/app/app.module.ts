@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopSectionComponent } from './top-section/top-section.component';
@@ -21,7 +20,9 @@ import { ImpressumComponent } from './impressum/impressum.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { DataProtectionComponent } from './data-protection/data-protection.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from "@angular/material/form-field";
+
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import {MatInputModule} from '@angular/material/input';
     MatIconModule,
     MatProgressSpinnerModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    MatFormFieldModule
 
   ],
   providers: [],

@@ -83,10 +83,9 @@ $width-title: auto;
 
         input,
         textarea {
-            padding: 15px 25px;
-            border: 1px solid $base-color;
+            // padding: 15px 25px;
             border-radius: 10px;
-            background: white;
+            background: transparent;
             outline: none;
             width: 100%;
 
@@ -98,7 +97,7 @@ $width-title: auto;
 
             &:focus,
             &:hover {
-                box-shadow: inset 0px 0px 1px 1px $base-color;
+                // box-shadow: inset 0px 0px 1px 1px $base-color;
             }
         }
 
@@ -144,6 +143,10 @@ $width-title: auto;
         }
 
     }
+}
+
+.form_input_wrapper{
+    width: 100%;
 }
 
 .to-the-top_wrapper {

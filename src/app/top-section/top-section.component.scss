@@ -167,11 +167,16 @@ $width-title: auto;
     transform: translate(-50%, 50%);
 }
 
+@media(min-width:2000px) {
+    .top-section__main-img {
+        width: 50vw !important;
+    }
+}
 
 @media(min-height:1200px) and (min-width:850px) {
     .top-section__main-img {
-        height: clamp(50svh, 100%, 65svh);
-        width: 50%;
+        height: clamp(50svh, 100%, 60svh);
+        width: auto;
         left: 0px;
         max-width: unset;
 
@@ -323,6 +328,13 @@ $width-title: auto;
     .intermediary-circle {
         left: 740px;
     }
+
+
+    .top-section__scroll{
+        transform: translateY(130px) translateX(300px);
+        width: 100px;
+        overflow: hidden;
+    }
 }
 
 
@@ -341,6 +353,11 @@ $width-title: auto;
         h3 {
             font-size: 78px;
         }
+    }
+
+    .top-section__scroll{
+        transform: translateY(130px) translateX(0px);
+        width: auto;
     }
 }
 
