@@ -51,11 +51,16 @@ header {
     align-items: center;
     width: 80px;
     height: 80px;
+    transition: transform 250ms ease-in-out;
 
     img {
         width: 100%;
         object-fit: contain;
         cursor: pointer;
+    }
+
+    &:hover {
+        transform: scale(1.1);
     }
 }
 
@@ -69,7 +74,10 @@ header {
     img {
         width: 100%;
         object-fit: contain;
+
     }
+
+
 }
 
 

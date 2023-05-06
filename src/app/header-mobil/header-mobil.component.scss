@@ -40,6 +40,14 @@ $width-title: auto;
     }
 }
 
+.menu_icon {
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
 
 .menu-mobil_top {
     display: flex;
@@ -82,7 +90,7 @@ $width-title: auto;
         height: 100svh;
     }
 
-    
+
     .menu-mobil_bottom {
         gap: 50px;
 
@@ -122,9 +130,9 @@ $width-title: auto;
 }
 
 
-@media(max-width:450px){
-    .menu-mobil_bottom{
-        a{
+@media(max-width:450px) {
+    .menu-mobil_bottom {
+        a {
             font-size: 1.5rem;
         }
     }
