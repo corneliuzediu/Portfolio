@@ -9,10 +9,12 @@ $second-font-family : 'Baloo 2';
     background-color: white;
     height: 630px;
     width: 100%;
+    max-width: 2500px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 75px
+    gap: 75px;
+    margin-inline: auto;
 }
 
 
@@ -123,6 +125,22 @@ $second-font-family : 'Baloo 2';
     }
 }
 
+@media(min-width:2499px) {
+    .about-me_wrapper {
+        height: 800px;
+    }
+
+    .about-me_left {
+        font-size: 166px;
+    }
+
+    .about-me_text,
+    .about-me_button-container button {
+        font-size: 1.6rem;
+    }
+
+
+}
 
 @media(max-width:1100px) {
     .about-me_circle {

@@ -14,12 +14,17 @@ $width-title: auto;
     display: none;
 }
 
+.contact_container {
+    background: linear-gradient(179.99deg, #FFFFFF 12.89%, #D7FFEC 91.39%);
+}
+
 .contact_wrapper {
     position: relative;
     display: flex;
     margin-top: 100px;
-    background: linear-gradient(179.99deg, #FFFFFF 12.89%, #D7FFEC 91.39%);
+    margin-inline: auto;
     padding-bottom: 150px;
+    max-width: 2500px;
 }
 
 
@@ -145,7 +150,7 @@ $width-title: auto;
     }
 }
 
-.form_input_wrapper{
+.form_input_wrapper {
     width: 100%;
 }
 
@@ -322,6 +327,47 @@ $width-title: auto;
     height: 80px;
     background: $bg-gradient;
     border-radius: 100%;
+}
+
+@media(min-width:2500px) {
+    .contact_left {
+        h3 {
+            font-size: 40px;
+            line-height: 180%;
+        }
+
+        p {
+            font-size: 24px;
+            line-height: 120%;
+            padding-bottom: 12px;
+        }
+
+        div {
+            h4 {
+                font-size: 30px;
+            }
+        }
+    }
+
+    .contact_right {
+
+        form {
+
+            input,
+            textarea {
+                font-size: 24px;
+
+                &::placeholder {
+                    font-size: 24px;
+
+                }
+            }
+
+            mat-label {
+                font-size: 24px;
+            }
+        }
+    }
 }
 
 

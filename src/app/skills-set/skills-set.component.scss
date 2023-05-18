@@ -66,11 +66,41 @@ $second-font-family : 'Baloo 2';
 
         p {
             font-size: 18px;
-            // margin: unset !important;
         }
     }
 }
 
+@media(min-width:2500px) {
+    .skills-set_wrapper {
+        height: 800px;
+    }
+
+    .skills-set_title {
+        font-size: 120px;
+    }
+
+    .skills-set_board {
+        gap: 160px;
+        row-gap: 70px;
+        width: 1740px;
+        font-size: 1.6rem;
+
+        :hover {
+
+            p{
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+    .skill{
+        width: 220px;
+        div{
+            width: auto;
+        }
+    
+    }
+}
 
 @media(max-width:1300px) {
     .skills-set_wrapper {

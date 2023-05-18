@@ -92,6 +92,20 @@ app-header-mobil {
     display: none;
 }
 
+@media(min-width:2499px) {
+    header {
+        ul {
+            div {
+                width: 230px;
+
+                a {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+
+    }
+}
 
 @media(max-height:750px) and (max-width:1000px) {
     header {
