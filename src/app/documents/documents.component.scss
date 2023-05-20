@@ -1,0 +1,11 @@
+.document_wrapper {
+    margin: 0px;
+    padding: 0px;
+    height: 100svh;
+    overflow: hidden;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+}

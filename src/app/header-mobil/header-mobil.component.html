@@ -1,5 +1,5 @@
 <div class="menu_icon" (click)="event='showMenuMobile'" [ngClass]="status ? '' : ''">
-    <img  src="./assets/icons/burger_menu.png" alt="">
+    <img src="./assets/icons/burger_menu.png" alt="">
 </div>
 <div class="menu-mobil" [@fadeIn]="event">
     <div class="menu-mobil_top">
@@ -17,6 +17,9 @@
         </div>
         <div>
             <a (click)="goToProjectsBoard(); event='hideMenuMobile'">My work</a>
+        </div>
+        <div>
+            <a (click)="goToCV();event='hideMenuMobile'">CV</a>
         </div>
     </ul>
 </div>

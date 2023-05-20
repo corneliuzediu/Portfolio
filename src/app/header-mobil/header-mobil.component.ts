@@ -88,6 +88,12 @@ export class HeaderMobilComponent {
     this.scroller.scrollToAnchor('top')
   }
 
+  
+  goToCV() {
+    const url = this.router.serializeUrl(this.router.createUrlTree(['/documents']));
+    window.open(url, '_blank');
+  }
+
 
   showMenu() {
     this.status = !this.status;

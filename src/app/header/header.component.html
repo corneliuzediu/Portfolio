@@ -3,7 +3,7 @@
             src="./assets/icons/logo_white.png">
     </div>
 
-    <ng-template  #greenLogo><img class="header-logo-green" (click)="goToMain()"
+    <ng-template #greenLogo><img class="header-logo-green" (click)="goToMain()"
             src="./assets/icons/logo.png"></ng-template>
     <ul>
         <div>
@@ -14,6 +14,9 @@
         </div>
         <div>
             <a (click)="goToProjectsBoard()">My work</a>
+        </div>
+        <div>
+            <a (click)="goToCV()">CV</a>
         </div>
     </ul>
     <app-header-mobil class="header-mobil"></app-header-mobil>
