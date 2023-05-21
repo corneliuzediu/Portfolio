@@ -6,13 +6,10 @@
             <h2 id="contact" translate>Contact</h2>
             <h3 translate>Got a problem to solve?</h3>
             <p translate> Contact me through this form. I am interested in hearing from you, knowing your ideas and
-                contributing
-                to
-                your
-                projects with my work.</p>
+                contributing to your projects with my work.</p>
             <div class="contact_left-q2">
                 <h4 translate> Need a Frontend developer?</h4>
-                <h4 translate><b>Contact me!</b></h4>
+                <h4 translate>Contact me!</h4>
             </div>
             <div class="contact-circle-2"></div>
         </div>
@@ -20,21 +17,20 @@
             <form (submit)="sendMail()" [formGroup]="sendMessage">
                 <mat-form-field class="form_input_wrapper" appearance="outline">
                     <mat-label translate>Name</mat-label>
-                    <input matInput type="text" placeholder="Your name" formControlName="nameFormControl" #nameContact>
-                    <mat-error *ngIf="name && name.invalid && name.touched" translate>Please add your name</mat-error>
+                    <input matInput type="text" formControlName="nameFormControl" #nameContact>
+                    <mat-error *ngIf="name && name.invalid && name.touched" translate
+                        translate.placeholder="Ihren Name">Please add your name</mat-error>
                 </mat-form-field>
                 <mat-form-field class="form_input_wrapper" appearance="outline">
                     <mat-label translate>Email</mat-label>
-                    <input matInput type="email" placeholder="Your email" formControlName="emailFormControl"
-                        #emailContact>
+                    <input matInput type="email" formControlName="emailFormControl" #emailContact>
                     <mat-error *ngIf="email && email.invalid && email.touched" translate>Please add a valid
                         email</mat-error>
 
                 </mat-form-field>
                 <mat-form-field class="form_input_wrapper" appearance="outline">
                     <mat-label translate>Your message</mat-label>
-                    <textarea matInput type="text" placeholder="Your message" formControlName="messageFormControl"
-                        #messageContact></textarea>
+                    <textarea matInput type="text" formControlName="messageFormControl" #messageContact></textarea>
                     <mat-error *ngIf="message && message.invalid && message.touched" translate>Please add a valid
                         message</mat-error>
 
