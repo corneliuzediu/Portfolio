@@ -43,7 +43,7 @@ header {
 
         }
 
-        :nth-child(4){
+        :nth-child(4) {
             width: 50px;
         }
 
@@ -83,8 +83,20 @@ header {
         object-fit: contain;
 
     }
+}
 
 
+.transtale_btn {
+    position: sticky;
+    top: 0px;
+    color: white;
+    width: 90px;
+    font-size: 1.1rem;
+
+    a:hover {
+        cursor: pointer;
+        font-weight: 600;
+    }
 }
 
 

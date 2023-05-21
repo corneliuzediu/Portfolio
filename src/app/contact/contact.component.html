@@ -3,41 +3,43 @@
         <div class="contact-circle-1"></div>
         <div class="contact-circle-3"></div>
         <div class="contact_left">
-            <h2 id="contact">Contact</h2>
-            <h3>Got a problem to solve?</h3>
-            <p> Contact me through this form. I am interested in hearing from you, knowing your ideas and contributing
+            <h2 id="contact" translate>Contact</h2>
+            <h3 translate>Got a problem to solve?</h3>
+            <p translate> Contact me through this form. I am interested in hearing from you, knowing your ideas and
+                contributing
                 to
                 your
                 projects with my work.</p>
             <div class="contact_left-q2">
-                <h4> Need a Frontend developer?</h4>
-                <h4><b>Contact me!</b></h4>
+                <h4 translate> Need a Frontend developer?</h4>
+                <h4 translate><b>Contact me!</b></h4>
             </div>
             <div class="contact-circle-2"></div>
         </div>
         <div class="contact_right">
             <form (submit)="sendMail()" [formGroup]="sendMessage">
                 <mat-form-field class="form_input_wrapper" appearance="outline">
-                    <mat-label>Name</mat-label>
+                    <mat-label translate>Name</mat-label>
                     <input matInput type="text" placeholder="Your name" formControlName="nameFormControl" #nameContact>
-                    <mat-error *ngIf="name && name.invalid && name.touched">Please add your name</mat-error>
+                    <mat-error *ngIf="name && name.invalid && name.touched" translate>Please add your name</mat-error>
                 </mat-form-field>
                 <mat-form-field class="form_input_wrapper" appearance="outline">
-                    <mat-label>Email</mat-label>
+                    <mat-label translate>Email</mat-label>
                     <input matInput type="email" placeholder="Your email" formControlName="emailFormControl"
                         #emailContact>
-                    <mat-error *ngIf="email && email.invalid && email.touched">Please add a valid email</mat-error>
+                    <mat-error *ngIf="email && email.invalid && email.touched" translate>Please add a valid
+                        email</mat-error>
 
                 </mat-form-field>
                 <mat-form-field class="form_input_wrapper" appearance="outline">
-                    <mat-label>Your message</mat-label>
+                    <mat-label translate>Your message</mat-label>
                     <textarea matInput type="text" placeholder="Your message" formControlName="messageFormControl"
                         #messageContact></textarea>
-                    <mat-error *ngIf="message && message.invalid && message.touched">Please add a valid
+                    <mat-error *ngIf="message && message.invalid && message.touched" translate>Please add a valid
                         message</mat-error>
 
                 </mat-form-field>
-                <button #sentButton [disabled]="!sendMessage.valid">Say hello ;&#41;</button>
+                <button #sentButton [disabled]="!sendMessage.valid" translate>Say hello ;&#41;</button>
             </form>
         </div>
         <div class="contact_animations">
@@ -47,13 +49,13 @@
             <div #succesfullySubmited class="contact_succes-submit d-none">
                 <mat-card>
                     <mat-card-header>
-                        <mat-card-title>Form succesfully submited</mat-card-title>
+                        <mat-card-title translate>Form succesfully submited</mat-card-title>
                     </mat-card-header>
                     <mat-card-content>
-                        <p>Thank you for your contact.</p>
+                        <p translate>Thank you for your contact.</p>
                     </mat-card-content>
                     <div #flyIcon class="contact_send-icon">
-                        <mat-icon>send</mat-icon>
+                        <mat-icon translate>send</mat-icon>
                     </div>
                 </mat-card>
             </div>

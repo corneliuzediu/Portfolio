@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -11,8 +12,6 @@ export class AppComponent {
   title = 'Portofolio';
 
 
-  constructor(public router: Router) {
-
+  constructor(public router: Router, public translate: TranslateService) {
   }
-
 }

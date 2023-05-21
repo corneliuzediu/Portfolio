@@ -1,22 +1,29 @@
 <header class="header-pc">
-    <div class="header-logo" #logo *ngIf="getLocation() == '/'; else greenLogo"> <img (click)="goToMain()"
-            src="./assets/icons/logo_white.png">
+    <div>
+        <div class="header-logo" #logo *ngIf="getLocation() == '/'; else greenLogo"> <img (click)="goToMain()"
+                src="./assets/icons/logo_white.png">
+        </div>
+        <div class="transtale_btn">
+            <a (click)="translate.use('en')">EN</a>
+            |
+            <a (click)="translate.use('de')">DE</a>
+        </div>
     </div>
 
     <ng-template #greenLogo><img class="header-logo-green" (click)="goToMain()"
             src="./assets/icons/logo.png"></ng-template>
     <ul>
         <div>
-            <a (click)="goToAboutMe()">About me</a>
+            <a (click)="goToAboutMe()" translate>About me</a>
         </div>
         <div>
-            <a (click)="goToSkillsSet()">Skills set</a>
+            <a (click)="goToSkillsSet()" translate>Skills set</a>
         </div>
         <div>
-            <a (click)="goToProjectsBoard()">My work</a>
+            <a (click)="goToProjectsBoard()" translate>My work</a>
         </div>
         <div>
-            <a (click)="goToCV()">CV</a>
+            <a (click)="goToCV()" translate>CV</a>
         </div>
     </ul>
     <app-header-mobil class="header-mobil"></app-header-mobil>

@@ -3,6 +3,7 @@ import { ElementRef } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +15,7 @@ export class HeaderComponent {
 
   public location: any;
 
-  constructor(private scroller: ViewportScroller, private router: Router) { }
+  constructor(private scroller: ViewportScroller, private router: Router, public translate: TranslateService) { }
 
 
 
@@ -69,7 +70,7 @@ export class HeaderComponent {
     }
   }
 
-  
+
   goToCV() {
     const url = this.router.serializeUrl(this.router.createUrlTree(['/documents']));
     window.open(url, '_blank');
