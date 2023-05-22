@@ -5,7 +5,7 @@ sans-serif;
 $second-font-family : 'Baloo 2';
 
 .skills-set_wrapper {
-    height: 632px;
+    padding-block: 150px;
     width: 100%;
     background: linear-gradient(128.95deg, #57E8A2 32.52%, #33B476 104.12%);
     display: flex;
@@ -87,18 +87,19 @@ $second-font-family : 'Baloo 2';
 
         :hover {
 
-            p{
+            p {
                 font-size: 1.6rem;
             }
         }
     }
 
-    .skill{
+    .skill {
         width: 220px;
-        div{
+
+        div {
             width: auto;
         }
-    
+
     }
 }
 
@@ -118,6 +119,10 @@ $second-font-family : 'Baloo 2';
 
 
 @media(max-width:800px) {
+    .skills-set_title {
+        font-size: 4rem
+    }
+
     .skills-set_wrapper {
         width: unset;
         padding-inline: 50px;
@@ -135,7 +140,7 @@ $second-font-family : 'Baloo 2';
 
 @media(max-width:500px) {
     .skills-set_title {
-        font-size: 68px;
+        font-size: 3rem;
         margin-bottom: 20px;
     }
 

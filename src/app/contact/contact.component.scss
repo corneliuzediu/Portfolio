@@ -420,8 +420,7 @@ $width-title: auto;
 
 
     .contact-circle-2 {
-        top: 350%;
-        left: 22%;
+        display: none;
     }
 }
 
@@ -463,8 +462,8 @@ $width-title: auto;
         right: -80px;
     }
 
-    .contact-circle-2 {
-        top: 290%;
+    .to-the-top_wrapper {
+        left: 50px;
     }
 }
 
@@ -499,13 +498,15 @@ $width-title: auto;
         }
     }
 
-    .contact-circle-2 {
-        top: 800px;
-    }
-
 
     .to-the-top_wrapper {
-        left: 50px;
+        left: unset;
+        right: 50px;
+        bottom: 15px;
+    }
+
+    .contact-circle-3 {
+        display: none;
     }
 
 
@@ -562,14 +563,8 @@ $width-title: auto;
     }
 
 
-    .contact-circle-3 {
-        transform: translate(-50%, -180%);
-        bottom: 0px;
-    }
-
-
     .to-the-top_wrapper {
-        left: 30px;
+        right: 30px;
     }
 }
 
@@ -581,11 +576,14 @@ $width-title: auto;
         }
     }
 
-
-    .to-the-top_wrapper {
-        bottom: 20px;
+    .contact_right {
+        form {
+            button {
+                font-size: 18px;
+                padding: 10px 15px;
+            }
+        }
     }
-
 
     .contact_succes-submit {
         mat-card {

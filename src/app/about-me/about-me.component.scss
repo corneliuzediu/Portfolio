@@ -7,7 +7,7 @@ $second-font-family : 'Baloo 2';
 .about-me_wrapper {
     position: relative;
     background-color: white;
-    height: 630px;
+    min-height: 630px;
     width: 100%;
     max-width: 2500px;
     display: flex;
@@ -20,7 +20,7 @@ $second-font-family : 'Baloo 2';
 
 .about-me_left {
     display: flex;
-    font-size: 121px;
+    font-size: 100px;
     font-family: $second-font-family;
     color: $base-color;
     font-weight: 700;
@@ -46,6 +46,7 @@ $second-font-family : 'Baloo 2';
 
 .about-me_button-container {
     height: 50px;
+    padding-bottom: 80px;
 
     button {
         position: relative;
@@ -108,7 +109,7 @@ $second-font-family : 'Baloo 2';
 .about-me_text {
     font-size: 23px;
     text-align: justify;
-    padding-bottom: 40px;
+    padding-block: 80px;
 
 
     a {
@@ -142,25 +143,8 @@ $second-font-family : 'Baloo 2';
 
 }
 
+
 @media(max-width:1100px) {
-    .about-me_circle {
-        top: 60px
-    }
-}
-
-@media(max-width:1200px) {
-    .about-me_left {
-        font-size: 68px;
-        // width: unset;
-    }
-
-    .about-me_right {
-        min-width: calc(50% - 100px);
-    }
-}
-
-
-@media(max-width:1000px) {
     .about-me_wrapper {
         flex-direction: column;
         gap: 30px;
@@ -176,13 +160,18 @@ $second-font-family : 'Baloo 2';
         margin-left: unset;
         width: 100%;
         text-align: start;
+        font-size: 88px;
     }
 
     .about-me_right {
         padding-top: unset;
         margin-right: unset;
         width: 100%;
-        // min-width: calc(100% - 200px);
+    }
+
+
+    .about-me_text {
+        padding-top: 20px;
     }
 
 
@@ -203,6 +192,9 @@ $second-font-family : 'Baloo 2';
     .about-me_left {
         font-size: 3.5rem;
     }
+
+
+
 
 
     .about-me_circle {
@@ -242,7 +234,7 @@ $second-font-family : 'Baloo 2';
 
 @media(max-width:350px) {
     .about-me_left {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
 
