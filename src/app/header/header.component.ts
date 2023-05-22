@@ -72,8 +72,8 @@ export class HeaderComponent {
 
 
   goToCV() {
-    const url = this.router.serializeUrl(this.router.createUrlTree(['/documents']));
-    window.open(url, '_blank');
+    this.router.navigateByUrl('documents');
+    // window.open(url, '_blank');
   }
 
 
