@@ -4,14 +4,12 @@ import { DataProtectionComponent } from './data-protection/data-protection.compo
 import { ImpressumComponent } from './impressum/impressum.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
-import { DocumentsComponent } from './documents/documents.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
   { path: 'impressum', component: ImpressumComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'data-protection', component: DataProtectionComponent },
-  { path: 'documents', component: DocumentsComponent }
 ];
 
 @NgModule({

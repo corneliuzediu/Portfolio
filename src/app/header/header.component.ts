@@ -71,12 +71,6 @@ export class HeaderComponent {
   }
 
 
-  goToCV() {
-    this.router.navigateByUrl('documents');
-    // window.open(url, '_blank');
-  }
-
-
   getLocation() {
     let url = window.location.href;
     let location = url.substring(url.lastIndexOf(('/')));

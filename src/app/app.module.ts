@@ -22,7 +22,6 @@ import { DataProtectionComponent } from './data-protection/data-protection.compo
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
-import { DocumentsComponent } from './documents/documents.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -49,7 +48,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     MainPageComponent,
     DataProtectionComponent,
     PrivacyPolicyComponent,
-    DocumentsComponent,
   ],
   imports: [
     BrowserModule,
