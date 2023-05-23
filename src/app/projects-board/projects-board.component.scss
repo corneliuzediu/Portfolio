@@ -461,6 +461,10 @@ $second-font-family : 'Baloo 2';
 
 
 @media(max-width:800px) {
+    .projects-board_wrapper {
+        overflow: hidden;
+    }
+
     .projects-board_title {
         margin-top: 50px;
         margin-inline: 50px;

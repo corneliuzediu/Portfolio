@@ -156,7 +156,7 @@ app-header-mobil {
 
 @media(max-width:1300px) {
     header {
-        
+
         ul {
             margin-block-start: 0px;
             margin-block-end: auto;
@@ -176,8 +176,6 @@ app-header-mobil {
 
 @media(max-width:1000px) {
     header {
-        margin-right: 50px;
-
         ul {
             display: none;
         }
@@ -189,7 +187,7 @@ app-header-mobil {
 }
 
 
-@media(max-width:800px) {
+@media(max-width:850px) {
     header {
         margin-inline: 50px;
     }

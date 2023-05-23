@@ -456,7 +456,7 @@ $width-title: auto;
 
     .top-section__scroll {
         height: calc(100% + 82px);
-        transform: translateY(50px) translateX(-20%);
+        transform: translateY(50px) translateX(20%);
 
         span {
             color: white;
@@ -570,11 +570,13 @@ $width-title: auto;
             object-fit: contain;
         }
     }
-}
 
-@media(max-width:800px) {
     .top-section__title {
         padding-left: 50px;
+    }
+
+    .top-section_logo-white-platforms {
+        left: 50px;
     }
 }
 
