@@ -30,9 +30,10 @@
                 </mat-form-field>
                 <mat-form-field class="form_input_wrapper" appearance="outline">
                     <mat-label translate>Your message</mat-label>
-                    <textarea matInput type="text" formControlName="messageFormControl" #messageContact></textarea>
-                    <mat-error *ngIf="message && message.invalid && message.touched" translate>Please add a valid
-                        message</mat-error>
+                    <textarea matInput type="text" cols="35" rows="8" formControlName="messageFormControl"
+                        #messageContact></textarea>
+                    <mat-error *ngIf="message && message.invalid && message.touched" translate>Please add a
+                        message (min:10)</mat-error>
 
                 </mat-form-field>
                 <button #sentButton [disabled]="!sendMessage.valid" translate>Say hello ;&#41;</button>

@@ -26,7 +26,7 @@ export class ContactComponent implements OnInit {
   sendMessage = new FormGroup({
     nameFormControl: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern("^[A-Za-z .'-]+$")]),
     emailFormControl: new FormControl('',[Validators.required, Validators.pattern("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$")]),
-    messageFormControl: new FormControl('',[Validators.required, Validators.pattern("^[A-Za-z .'-]+$")]),
+    messageFormControl: new FormControl('',[Validators.required, Validators.minLength(10)]),
   })
 
   color: ThemePalette = 'accent';
@@ -69,14 +69,13 @@ export class ContactComponent implements OnInit {
     fd.append('name', nameContact.value);
     fd.append('email', emailContact.value);
     fd.append('message', messageContact.value)
-    this.responseBackend = await fetch('https://corneliu-zediu.developerakademie.net/Contact%20form/send_mail/send_mail.php',
+    this.responseBackend = await fetch('https://corneliu-zediu.com/send_mail/send_mail.php',
       {
         method: 'POST',
         body: fd,
       }
     );
   }
-
   
   get name() {
     return this.sendMessage.get('nameFormControl');

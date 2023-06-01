@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Portofolio';
+  title = 'Portfolio';
 
 
   constructor(public router: Router, public translate: TranslateService) {
