@@ -25,8 +25,8 @@ export class ContactComponent implements OnInit {
 
   sendMessage = new FormGroup({
     nameFormControl: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern("^[A-Za-z .'-]+$")]),
-    emailFormControl: new FormControl('',[Validators.required, Validators.pattern("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$")]),
-    messageFormControl: new FormControl('',[Validators.required, Validators.minLength(10)]),
+    emailFormControl: new FormControl('', [Validators.required, Validators.pattern("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$")]),
+    messageFormControl: new FormControl('', [Validators.required, Validators.minLength(10)]),
   })
 
   color: ThemePalette = 'accent';
@@ -37,22 +37,31 @@ export class ContactComponent implements OnInit {
 
   constructor(private scroller: ViewportScroller, private router: Router) { }
 
-  ngOnInit(): void {
 
+  ngOnInit(): void { }
+
+  /**
+   * The function is collecting the inputs and provide them further to be send to backend.
+   */
+  async sendMail() {
+    if (!this.isFormEmpty()) {
+      let nameContact = this.nameContact.nativeElement
+      let emailContact = this.emailContact.nativeElement
+      let messageContact = this.messageContact.nativeElement
+      let sentButton = this.sentButton.nativeElement
+      this.disableContactFields(nameContact, emailContact, messageContact, sentButton);
+      await this.sendToBackend(nameContact, emailContact, messageContact, sentButton)
+    }
   }
 
 
-  async sendMail() {
-    this.getTimeClick();
-    let nameContact = this.nameContact.nativeElement
-    let emailContact = this.emailContact.nativeElement
-    let messageContact = this.messageContact.nativeElement
-    let sentButton = this.sentButton.nativeElement
-    this.disableContactFields(nameContact, emailContact, messageContact, sentButton);
-    await this.sendToBackend(nameContact, emailContact, messageContact)
-    this.showSendingAnimation();
-    this.clearContactFields(nameContact, emailContact, messageContact, sentButton);
-    this.enableContactFields(nameContact, emailContact, messageContact, sentButton)
+  isFormEmpty(): boolean {
+    const controls = this.sendMessage.controls;
+    return Object.keys(controls).some(controlName => {
+      const control = controls[controlName];
+      const value = control.value;
+      return value === null || value === '';
+    });
   }
 
 
@@ -64,19 +73,45 @@ export class ContactComponent implements OnInit {
   }
 
 
-  async sendToBackend(nameContact, emailContact, messageContact) {
+  /**
+   * The function is sending the information to backend and get the response from it.
+   * 
+   * @param nameContact - Sender of the contact
+   * @param emailContact - Email of the contact
+   * @param messageContact - Message of the Contact
+   * @param sentButton - HTML Element
+   */
+  async sendToBackend(nameContact, emailContact, messageContact, sentButton) {
     let fd = new FormData();
     fd.append('name', nameContact.value);
     fd.append('email', emailContact.value);
-    fd.append('message', messageContact.value)
-    this.responseBackend = await fetch('https://corneliu-zediu.com/send_mail/send_mail.php',
-      {
-        method: 'POST',
-        body: fd,
-      }
-    );
+    fd.append('message', messageContact.value);
+    this.showSendingAnimation();
+    await this.getResponseBackend(fd, nameContact, emailContact, messageContact, sentButton);
   }
-  
+
+
+  async getResponseBackend(fd, nameContact, emailContact, messageContact, sentButton) {
+    try {
+      const response = await fetch('https://corneliu-zediu.com/send_mail/send_mail.php',
+        {
+          method: 'POST',
+          body: fd,
+        }
+      );
+
+      if (response.ok) {
+        this.responseBackend = await response.json();
+        this.finishAnimation(nameContact, emailContact, messageContact, sentButton);
+      } else {
+        this.finishAnimation(nameContact, emailContact, messageContact, sentButton);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+
   get name() {
     return this.sendMessage.get('nameFormControl');
   }
@@ -110,28 +145,6 @@ export class ContactComponent implements OnInit {
 
   showSendingAnimation() {
     this.sendingAnimation.nativeElement.classList.remove('d-none')
-    let interval = setInterval(() => {
-      this.waitingTime(interval);
-    }, 100);
-  }
-
-
-  getTimeClick() {
-    this.initTime = new Date;
-  }
-
-
-  waitingTime(interval) {
-    let sinceClicked = new Date;
-    this.waitedTime = this.initTime.getTime() - sinceClicked.getTime();
-    if (this.waitedTime < -1500 && this.responseBackend.status >= 200 && this.responseBackend.status < 400) {
-      clearInterval(interval)
-      this.sendingAnimation.nativeElement.classList.add('d-none')
-      this.succesfullySubmited.nativeElement.classList.remove('d-none')
-      this.provideAnimation();
-      setTimeout(() => this.removeAnimation(), 1500)
-    }
-    setTimeout(() => this.removeAnimation(), 5000)
   }
 
 
@@ -141,6 +154,8 @@ export class ContactComponent implements OnInit {
 
 
   provideAnimation() {
+    this.sendingAnimation.nativeElement.classList.add('d-none')
+    this.succesfullySubmited.nativeElement.classList.remove('d-none')
     this.flyIcon.nativeElement.classList.add('flying-animation')
   }
 
@@ -148,5 +163,30 @@ export class ContactComponent implements OnInit {
   removeAnimation() {
     this.flyIcon.nativeElement.classList.remove('flying-animation')
     this.succesfullySubmited.nativeElement.classList.add('d-none')
+  }
+
+
+  finishAnimation(nameContact, emailContact, messageContact, sentButton) {
+    this.sendMessage.reset();
+    this.markControlsAsValid();
+    console.log(this.sendMessage);
+
+    // this.clearContactFields(nameContact, emailContact, messageContact, sentButton);
+    this.provideAnimation();
+    setTimeout(() => {
+      this.removeAnimation();
+      this.enableContactFields(nameContact, emailContact, messageContact, sentButton)
+    }, 1500)
+  }
+
+
+  markControlsAsValid() {
+    const controls = this.sendMessage.controls;
+    Object.keys(controls).forEach(controlName => {
+      const control = controls[controlName];
+      control.markAsUntouched();
+      control.markAsPristine();
+      control.setErrors(null);
+    });
   }
 }
