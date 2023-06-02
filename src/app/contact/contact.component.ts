@@ -17,21 +17,27 @@ export class ContactComponent implements OnInit {
   @ViewChild('nameContact') nameContact!: ElementRef;
   @ViewChild('emailContact') emailContact!: ElementRef;
   @ViewChild('messageContact') messageContact!: ElementRef;
-  @ViewChild('sentButton') sentButton!: ElementRef;
   @ViewChild('sendingAnimation') sendingAnimation!: ElementRef;
   @ViewChild('succesfullySubmited') succesfullySubmited!: ElementRef;
   @ViewChild('flyIcon') flyIcon!: ElementRef;
 
 
-  sendMessage = new FormGroup({
-    nameFormControl: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern("^[A-Za-z .'-]+$")]),
-    emailFormControl: new FormControl('', [Validators.required, Validators.pattern("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$")]),
+  contactForm = new FormGroup({
+    nameFormControl: new FormControl('', [Validators.required, Validators.pattern("^[A-Za-z .'-]+$")]),
+    emailFormControl: new FormControl('', [Validators.required, Validators.email]),
     messageFormControl: new FormControl('', [Validators.required, Validators.minLength(10)]),
   })
 
+  responseBackend: any;
+  emailSent: boolean = false;
+  validName: boolean = true;
+  validEmail: boolean = true;
+  validMessage: boolean = true;
+
+
+  //For animations
   color: ThemePalette = 'accent';
   mode: ProgressSpinnerMode = 'indeterminate';
-  responseBackend: any;
   public initTime: Date = new Date;
   waitedTime: any;
 
@@ -40,58 +46,31 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  /**
-   * The function is collecting the inputs and provide them further to be send to backend.
-   */
-  async sendMail() {
-    if (!this.isFormEmpty()) {
+  async onSubmit(ngForm: any) {
+    debugger
+    if (this.contactForm.valid) {
+      this.emailSent = true;
       let nameContact = this.nameContact.nativeElement
       let emailContact = this.emailContact.nativeElement
       let messageContact = this.messageContact.nativeElement
-      let sentButton = this.sentButton.nativeElement
-      this.disableContactFields(nameContact, emailContact, messageContact, sentButton);
-      await this.sendToBackend(nameContact, emailContact, messageContact, sentButton)
+      await this.sendToBackend(nameContact, emailContact, messageContact)
+    } else {
+      this.showErrors()
     }
   }
 
 
-  isFormEmpty(): boolean {
-    const controls = this.sendMessage.controls;
-    return Object.keys(controls).some(controlName => {
-      const control = controls[controlName];
-      const value = control.value;
-      return value === null || value === '';
-    });
-  }
-
-
-  disableContactFields(nameContact, emailContact, messageContact, sentButton) {
-    nameContact.disabled = true;
-    emailContact.disabled = true;
-    messageContact.disabled = true;
-    sentButton.disabled = true;
-  }
-
-
-  /**
-   * The function is sending the information to backend and get the response from it.
-   * 
-   * @param nameContact - Sender of the contact
-   * @param emailContact - Email of the contact
-   * @param messageContact - Message of the Contact
-   * @param sentButton - HTML Element
-   */
-  async sendToBackend(nameContact, emailContact, messageContact, sentButton) {
+  async sendToBackend(nameContact, emailContact, messageContact) {
     let fd = new FormData();
     fd.append('name', nameContact.value);
     fd.append('email', emailContact.value);
     fd.append('message', messageContact.value);
     this.showSendingAnimation();
-    await this.getResponseBackend(fd, nameContact, emailContact, messageContact, sentButton);
+    await this.getResponseBackend(fd);
   }
 
 
-  async getResponseBackend(fd, nameContact, emailContact, messageContact, sentButton) {
+  async getResponseBackend(fd) {
     try {
       const response = await fetch('https://corneliu-zediu.com/send_mail/send_mail.php',
         {
@@ -102,9 +81,9 @@ export class ContactComponent implements OnInit {
 
       if (response.ok) {
         this.responseBackend = await response.json();
-        this.finishAnimation(nameContact, emailContact, messageContact, sentButton);
+        this.finishAnimation();
       } else {
-        this.finishAnimation(nameContact, emailContact, messageContact, sentButton);
+        this.finishAnimation();
       }
     } catch (error) {
       console.error(error);
@@ -112,34 +91,56 @@ export class ContactComponent implements OnInit {
   }
 
 
+  showErrors() {
+    if (this.contactForm.controls['nameFormControl'].status === 'INVALID') {
+      this.validName = false;
+    }
+    if (this.contactForm.controls['emailFormControl'].status === 'INVALID') {
+      this.validEmail = false;
+    }
+    if (this.contactForm.controls['messageFormControl'].status === 'INVALID') {
+      this.validMessage = false;
+    }
+
+    setTimeout(() => {
+      this.validName = true;
+      this.validEmail = true;
+      this.validMessage = true;
+      this.emailSent = false;
+    }, 2000)
+  }
+
+
+  checkValidity(input: string) {
+    switch (input) {
+      case 'nameFormControl':
+        this.validName = this.contactForm.controls[input].valid || !this.contactForm.controls[input].touched;
+        break;
+      case 'emailFormControl':
+        this.validEmail = this.contactForm.controls[input].valid || !this.contactForm.controls[input].touched;
+        break;
+      case 'messageFormControl':
+        this.validMessage = this.contactForm.controls[input].valid || !this.contactForm.controls[input].touched;
+        break;
+      default:
+        break;
+    }
+  }
+
+
+
   get name() {
-    return this.sendMessage.get('nameFormControl');
+    return this.contactForm.get('nameFormControl');
   }
 
 
   get email() {
-    return this.sendMessage.get('emailFormControl');
+    return this.contactForm.get('emailFormControl');
   }
 
 
   get message() {
-    return this.sendMessage.get('messageFormControl');
-  }
-
-
-  enableContactFields(nameContact, emailContact, messageContact, sentButton) {
-    nameContact.disabled = false;
-    emailContact.disabled = false;
-    messageContact.disabled = false;
-    sentButton.disabled = false;
-  }
-
-
-  clearContactFields(nameContact, emailContact, messageContact, sentButton) {
-    nameContact.value = '';
-    emailContact.value = '';
-    messageContact.value = '';
-    sentButton.value = '';
+    return this.contactForm.get('messageFormControl');
   }
 
 
@@ -160,33 +161,21 @@ export class ContactComponent implements OnInit {
   }
 
 
-  removeAnimation() {
-    this.flyIcon.nativeElement.classList.remove('flying-animation')
-    this.succesfullySubmited.nativeElement.classList.add('d-none')
-  }
-
-
-  finishAnimation(nameContact, emailContact, messageContact, sentButton) {
-    this.sendMessage.reset();
-    this.markControlsAsValid();
-    console.log(this.sendMessage);
-
-    // this.clearContactFields(nameContact, emailContact, messageContact, sentButton);
+  finishAnimation() {
+    debugger
+    this.contactForm.reset();
+    this.contactForm.markAsPristine();
+    this.contactForm.updateValueAndValidity();
     this.provideAnimation();
     setTimeout(() => {
       this.removeAnimation();
-      this.enableContactFields(nameContact, emailContact, messageContact, sentButton)
+      this.emailSent = false;
     }, 1500)
   }
 
 
-  markControlsAsValid() {
-    const controls = this.sendMessage.controls;
-    Object.keys(controls).forEach(controlName => {
-      const control = controls[controlName];
-      control.markAsUntouched();
-      control.markAsPristine();
-      control.setErrors(null);
-    });
+  removeAnimation() {
+    this.flyIcon.nativeElement.classList.remove('flying-animation')
+    this.succesfullySubmited.nativeElement.classList.add('d-none')
   }
 }
