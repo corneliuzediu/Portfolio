@@ -47,7 +47,6 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void { }
 
   async onSubmit(ngForm: any) {
-    debugger
     if (this.contactForm.valid) {
       this.emailSent = true;
       let nameContact = this.nameContact.nativeElement
@@ -162,7 +161,6 @@ export class ContactComponent implements OnInit {
 
 
   finishAnimation() {
-    debugger
     this.contactForm.reset();
     this.contactForm.markAsPristine();
     this.contactForm.updateValueAndValidity();
